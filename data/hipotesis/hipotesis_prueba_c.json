@@ -1,0 +1,14 @@
+{
+  "_nota": "Hipotesis inventada para la Prueba C (verificar agnosticismo real del motor). Distinta a hipotesis_socioeconomico.json: usa umbrales y combinaciones distintas sobre las mismas columnas del dataset sintetico.",
+  "hipotesis": [
+    {"condiciones": [
+        {"columna": "edad", "operador": "<", "valor": 30},
+        {"columna": "estabilidad_laboral", "operador": "==", "valor": "Freelance"}
+      ],
+      "categoria_destino": "Riesgo Joven Independiente"},
+    {"columna": "nivel_estudios", "operador": "==", "valor": "Posgrado", "categoria_destino": "Perfil Premium"},
+    {"columna": "estado_civil", "operador": "in", "valor": ["Divorciado", "Viudo"], "categoria_destino": "Apoyo Personal"},
+    {"columna": "numero_hijos", "operador": ">=", "valor": 3, "categoria_destino": "Familia Numerosa"},
+    {"columna": "estabilidad_laboral", "operador": "==", "valor": "Dueño", "categoria_destino": "Perfil Premium"}
+  ]
+}

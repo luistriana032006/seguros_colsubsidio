@@ -1,0 +1,25 @@
+# Datos pesados del pipeline de lote de Colsubsidio.
+# Algunos CSV superan los 100MB, el límite duro de GitHub — no se pueden
+# subir sin Git LFS. Se excluyen del repo; se regeneran corriendo el
+# pipeline de scripts/ (ver VICTOR.md §6) a partir de data/raw/.
+data/raw/*.xlsx
+data/processed/*.csv
+
+# Log de auditoría (SQLite): crece con cada uso local, no es código fuente.
+seguros.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Streamlit
+.streamlit/
+
+# SO / editores
+.DS_Store
+*.swp
+
+# Configuración local de Claude Code (específica de cada máquina/usuario)
+.claude/

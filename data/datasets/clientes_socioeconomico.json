@@ -1,0 +1,5002 @@
+[
+  {
+    "cliente_id": 1,
+    "edad": 49,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 2,
+    "edad": 41,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 3,
+    "edad": 35,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 4,
+    "edad": 69,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 5,
+    "edad": 45,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 6,
+    "edad": 52,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 7,
+    "edad": 49,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 8,
+    "edad": 32,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 9,
+    "edad": 35,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 10,
+    "edad": 65,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 11,
+    "edad": 40,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 12,
+    "edad": 27,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 13,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 14,
+    "edad": 65,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 15,
+    "edad": 56,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 16,
+    "edad": 28,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 17,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 18,
+    "edad": 76,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 19,
+    "edad": 35,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 20,
+    "edad": 34,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 21,
+    "edad": 29,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 22,
+    "edad": 41,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 23,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 24,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 25,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 26,
+    "edad": 46,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 27,
+    "edad": 26,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 28,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 29,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 30,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 31,
+    "edad": 62,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 32,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 33,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 34,
+    "edad": 60,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 35,
+    "edad": 54,
+    "estado_civil": "Soltero",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 36,
+    "edad": 59,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 37,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 38,
+    "edad": 61,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 39,
+    "edad": 57,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 40,
+    "edad": 35,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 41,
+    "edad": 71,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 42,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 43,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 44,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 45,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 46,
+    "edad": 64,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 47,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 48,
+    "edad": 49,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 49,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 50,
+    "edad": 44,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 51,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 52,
+    "edad": 48,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 53,
+    "edad": 64,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 54,
+    "edad": 49,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 55,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 56,
+    "edad": 41,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 57,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 58,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 59,
+    "edad": 43,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 60,
+    "edad": 31,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 61,
+    "edad": 55,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 62,
+    "edad": 50,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 63,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 64,
+    "edad": 58,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 65,
+    "edad": 53,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 66,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 67,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 68,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 69,
+    "edad": 36,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 70,
+    "edad": 40,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 71,
+    "edad": 52,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 72,
+    "edad": 47,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 73,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 74,
+    "edad": 72,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 75,
+    "edad": 45,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 76,
+    "edad": 62,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 77,
+    "edad": 58,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 78,
+    "edad": 76,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 79,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 80,
+    "edad": 34,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 81,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 82,
+    "edad": 41,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 83,
+    "edad": 54,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 84,
+    "edad": 44,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 85,
+    "edad": 59,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 86,
+    "edad": 65,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 87,
+    "edad": 51,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 88,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 89,
+    "edad": 33,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 90,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 91,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 92,
+    "edad": 53,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 93,
+    "edad": 66,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 94,
+    "edad": 44,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 95,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 96,
+    "edad": 56,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 97,
+    "edad": 73,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 98,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 99,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 100,
+    "edad": 62,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 101,
+    "edad": 62,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 102,
+    "edad": 46,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 103,
+    "edad": 31,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 104,
+    "edad": 32,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 105,
+    "edad": 34,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 106,
+    "edad": 72,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 107,
+    "edad": 37,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 108,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 109,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 110,
+    "edad": 45,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 111,
+    "edad": 39,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 112,
+    "edad": 71,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 113,
+    "edad": 51,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 114,
+    "edad": 37,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 115,
+    "edad": 31,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 116,
+    "edad": 41,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 117,
+    "edad": 69,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 118,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 119,
+    "edad": 30,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 120,
+    "edad": 32,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 121,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 122,
+    "edad": 54,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 123,
+    "edad": 68,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 124,
+    "edad": 43,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 125,
+    "edad": 49,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 126,
+    "edad": 52,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 127,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 128,
+    "edad": 66,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 129,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 130,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 131,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 132,
+    "edad": 58,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 133,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 134,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 135,
+    "edad": 28,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 136,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 137,
+    "edad": 51,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 138,
+    "edad": 36,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 139,
+    "edad": 59,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 140,
+    "edad": 47,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 141,
+    "edad": 48,
+    "estado_civil": "Viudo",
+    "numero_hijos": 0,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 142,
+    "edad": 40,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 143,
+    "edad": 64,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 144,
+    "edad": 48,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 145,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 146,
+    "edad": 26,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 147,
+    "edad": 44,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 148,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 149,
+    "edad": 36,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 150,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 151,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 152,
+    "edad": 71,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 153,
+    "edad": 58,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 154,
+    "edad": 39,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 155,
+    "edad": 28,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 156,
+    "edad": 40,
+    "estado_civil": "Viudo",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 157,
+    "edad": 51,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 158,
+    "edad": 58,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 159,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 160,
+    "edad": 29,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 161,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 162,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 163,
+    "edad": 31,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 164,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 165,
+    "edad": 42,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 166,
+    "edad": 41,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 167,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 168,
+    "edad": 36,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 169,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 170,
+    "edad": 49,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 171,
+    "edad": 39,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 172,
+    "edad": 63,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 173,
+    "edad": 48,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 174,
+    "edad": 41,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 175,
+    "edad": 73,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 176,
+    "edad": 31,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 177,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 178,
+    "edad": 40,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 179,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 180,
+    "edad": 64,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 181,
+    "edad": 45,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 182,
+    "edad": 30,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 183,
+    "edad": 46,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 4,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 184,
+    "edad": 59,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 185,
+    "edad": 56,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 186,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 187,
+    "edad": 37,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 188,
+    "edad": 48,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 189,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 190,
+    "edad": 43,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 191,
+    "edad": 34,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 192,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 193,
+    "edad": 40,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 194,
+    "edad": 55,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 195,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 196,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 197,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 198,
+    "edad": 57,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 199,
+    "edad": 31,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 200,
+    "edad": 32,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 201,
+    "edad": 39,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 202,
+    "edad": 43,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 203,
+    "edad": 49,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 204,
+    "edad": 23,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 205,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 206,
+    "edad": 33,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 207,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 208,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 209,
+    "edad": 73,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 210,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 211,
+    "edad": 35,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 212,
+    "edad": 56,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 213,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 214,
+    "edad": 65,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 215,
+    "edad": 66,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 216,
+    "edad": 43,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 217,
+    "edad": 57,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 218,
+    "edad": 33,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 219,
+    "edad": 37,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 220,
+    "edad": 63,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 221,
+    "edad": 31,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 222,
+    "edad": 50,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 223,
+    "edad": 28,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 224,
+    "edad": 45,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 225,
+    "edad": 44,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 226,
+    "edad": 54,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 227,
+    "edad": 41,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 228,
+    "edad": 62,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 229,
+    "edad": 33,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 230,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 231,
+    "edad": 55,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 232,
+    "edad": 26,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 233,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 234,
+    "edad": 35,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 235,
+    "edad": 68,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 236,
+    "edad": 43,
+    "estado_civil": "Viudo",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 237,
+    "edad": 50,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 238,
+    "edad": 48,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 239,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 240,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 241,
+    "edad": 39,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 242,
+    "edad": 41,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 243,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 244,
+    "edad": 49,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 245,
+    "edad": 45,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 246,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 247,
+    "edad": 43,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 248,
+    "edad": 23,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 249,
+    "edad": 58,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 250,
+    "edad": 51,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 251,
+    "edad": 26,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 252,
+    "edad": 29,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 253,
+    "edad": 38,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 254,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 255,
+    "edad": 42,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 256,
+    "edad": 36,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 257,
+    "edad": 28,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 258,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 259,
+    "edad": 33,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 260,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 261,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 262,
+    "edad": 41,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 263,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 264,
+    "edad": 72,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 265,
+    "edad": 37,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 266,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 267,
+    "edad": 52,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 268,
+    "edad": 49,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 269,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 270,
+    "edad": 50,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 271,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 272,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 273,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 274,
+    "edad": 42,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 275,
+    "edad": 51,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 276,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 277,
+    "edad": 47,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 278,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 279,
+    "edad": 47,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 280,
+    "edad": 28,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 281,
+    "edad": 31,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 282,
+    "edad": 44,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 283,
+    "edad": 44,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 284,
+    "edad": 55,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 285,
+    "edad": 46,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 286,
+    "edad": 53,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 287,
+    "edad": 42,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 288,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 289,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 290,
+    "edad": 65,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 291,
+    "edad": 55,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 292,
+    "edad": 62,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 293,
+    "edad": 20,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 294,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 295,
+    "edad": 39,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 296,
+    "edad": 42,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 297,
+    "edad": 67,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 298,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 299,
+    "edad": 21,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 300,
+    "edad": 38,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 301,
+    "edad": 45,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 302,
+    "edad": 51,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 303,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 304,
+    "edad": 52,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 305,
+    "edad": 26,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 306,
+    "edad": 72,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 307,
+    "edad": 55,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 308,
+    "edad": 49,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 309,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 310,
+    "edad": 51,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 311,
+    "edad": 38,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 312,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 313,
+    "edad": 27,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 314,
+    "edad": 39,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 315,
+    "edad": 61,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 316,
+    "edad": 41,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 317,
+    "edad": 64,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 318,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 319,
+    "edad": 43,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 320,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 321,
+    "edad": 45,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 322,
+    "edad": 72,
+    "estado_civil": "Viudo",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 323,
+    "edad": 70,
+    "estado_civil": "Viudo",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 324,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 325,
+    "edad": 41,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 326,
+    "edad": 51,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 327,
+    "edad": 39,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 328,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 329,
+    "edad": 31,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 330,
+    "edad": 23,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 331,
+    "edad": 32,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 332,
+    "edad": 33,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 333,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 334,
+    "edad": 75,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 335,
+    "edad": 34,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 336,
+    "edad": 72,
+    "estado_civil": "Viudo",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 337,
+    "edad": 60,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 338,
+    "edad": 52,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 339,
+    "edad": 29,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 340,
+    "edad": 60,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 341,
+    "edad": 70,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 342,
+    "edad": 68,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 343,
+    "edad": 38,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 344,
+    "edad": 71,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 345,
+    "edad": 32,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 346,
+    "edad": 36,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 347,
+    "edad": 29,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 348,
+    "edad": 33,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 349,
+    "edad": 43,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 350,
+    "edad": 33,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 351,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 352,
+    "edad": 34,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 353,
+    "edad": 29,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 354,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 355,
+    "edad": 71,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 356,
+    "edad": 43,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 357,
+    "edad": 57,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 358,
+    "edad": 58,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 359,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 360,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 361,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 362,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 363,
+    "edad": 64,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 364,
+    "edad": 62,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 365,
+    "edad": 33,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 366,
+    "edad": 32,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 367,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 368,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 369,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 370,
+    "edad": 50,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 371,
+    "edad": 65,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 372,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 373,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 374,
+    "edad": 32,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 375,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 376,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 377,
+    "edad": 44,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 378,
+    "edad": 58,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 379,
+    "edad": 38,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 380,
+    "edad": 31,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 381,
+    "edad": 56,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 382,
+    "edad": 32,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 383,
+    "edad": 70,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 384,
+    "edad": 33,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 385,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 386,
+    "edad": 63,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 387,
+    "edad": 41,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 388,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 389,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 390,
+    "edad": 52,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 391,
+    "edad": 59,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 392,
+    "edad": 36,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 393,
+    "edad": 67,
+    "estado_civil": "Viudo",
+    "numero_hijos": 4,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 394,
+    "edad": 29,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 395,
+    "edad": 43,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 396,
+    "edad": 39,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 397,
+    "edad": 40,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 398,
+    "edad": 68,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 399,
+    "edad": 39,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 400,
+    "edad": 41,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 401,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 402,
+    "edad": 51,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 403,
+    "edad": 60,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 404,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 405,
+    "edad": 42,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 406,
+    "edad": 29,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 407,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 408,
+    "edad": 53,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 409,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 410,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 411,
+    "edad": 41,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 412,
+    "edad": 31,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 413,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 414,
+    "edad": 55,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 415,
+    "edad": 54,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 416,
+    "edad": 39,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 417,
+    "edad": 30,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 418,
+    "edad": 37,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 419,
+    "edad": 54,
+    "estado_civil": "Viudo",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 420,
+    "edad": 24,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 421,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 422,
+    "edad": 36,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 423,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 424,
+    "edad": 44,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 425,
+    "edad": 53,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 426,
+    "edad": 39,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 427,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 428,
+    "edad": 45,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 429,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 430,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 431,
+    "edad": 64,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 432,
+    "edad": 41,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Pereira"
+  },
+  {
+    "cliente_id": 433,
+    "edad": 54,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 434,
+    "edad": 47,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 435,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 436,
+    "edad": 40,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 437,
+    "edad": 70,
+    "estado_civil": "Viudo",
+    "numero_hijos": 3,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 438,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 439,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 440,
+    "edad": 59,
+    "estado_civil": "Viudo",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 441,
+    "edad": 43,
+    "estado_civil": "Soltero",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 442,
+    "edad": 31,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 443,
+    "edad": 37,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 444,
+    "edad": 42,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 445,
+    "edad": 46,
+    "estado_civil": "Viudo",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 446,
+    "edad": 63,
+    "estado_civil": "Casado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 447,
+    "edad": 47,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 448,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 449,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 450,
+    "edad": 68,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 451,
+    "edad": 27,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 452,
+    "edad": 26,
+    "estado_civil": "Casado",
+    "numero_hijos": 5,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 453,
+    "edad": 46,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 454,
+    "edad": 39,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 455,
+    "edad": 28,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 456,
+    "edad": 43,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 457,
+    "edad": 25,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 458,
+    "edad": 50,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 459,
+    "edad": 58,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 460,
+    "edad": 35,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 461,
+    "edad": 29,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 462,
+    "edad": 31,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 463,
+    "edad": 25,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 464,
+    "edad": 55,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 465,
+    "edad": 62,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 466,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 467,
+    "edad": 41,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 468,
+    "edad": 40,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 469,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 470,
+    "edad": 46,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 471,
+    "edad": 27,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 472,
+    "edad": 68,
+    "estado_civil": "Casado",
+    "numero_hijos": 4,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 473,
+    "edad": 24,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 474,
+    "edad": 32,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 475,
+    "edad": 27,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 476,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Posgrado",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 477,
+    "edad": 37,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 5,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 478,
+    "edad": 71,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 2,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 479,
+    "edad": 24,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 480,
+    "edad": 69,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 481,
+    "edad": 28,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 482,
+    "edad": 65,
+    "estado_civil": "Viudo",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 483,
+    "edad": 48,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 5",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bucaramanga"
+  },
+  {
+    "cliente_id": 484,
+    "edad": 45,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 485,
+    "edad": 26,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 486,
+    "edad": 72,
+    "estado_civil": "Soltero",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 487,
+    "edad": 48,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 488,
+    "edad": 34,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 489,
+    "edad": 35,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 490,
+    "edad": 32,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 491,
+    "edad": 46,
+    "estado_civil": "Soltero",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Barranquilla"
+  },
+  {
+    "cliente_id": 492,
+    "edad": 42,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Manizales"
+  },
+  {
+    "cliente_id": 493,
+    "edad": 34,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 1",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Cali"
+  },
+  {
+    "cliente_id": 494,
+    "edad": 54,
+    "estado_civil": "Casado",
+    "numero_hijos": 1,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 495,
+    "edad": 38,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 496,
+    "edad": 37,
+    "estado_civil": "Casado",
+    "numero_hijos": 2,
+    "nivel_estudios": "Técnico",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Medellín"
+  },
+  {
+    "cliente_id": 497,
+    "edad": 33,
+    "estado_civil": "Unión Libre",
+    "numero_hijos": 1,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 4",
+    "estabilidad_laboral": "Empleado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 498,
+    "edad": 62,
+    "estado_civil": "Divorciado",
+    "numero_hijos": 0,
+    "nivel_estudios": "Primaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Pensionado",
+    "region_geografica": "Bogotá"
+  },
+  {
+    "cliente_id": 499,
+    "edad": 50,
+    "estado_civil": "Casado",
+    "numero_hijos": 3,
+    "nivel_estudios": "Secundaria",
+    "rango_ingresos": "Nivel 2",
+    "estabilidad_laboral": "Dueño",
+    "region_geografica": "Cartagena"
+  },
+  {
+    "cliente_id": 500,
+    "edad": 24,
+    "estado_civil": "Soltero",
+    "numero_hijos": 0,
+    "nivel_estudios": "Universitario",
+    "rango_ingresos": "Nivel 3",
+    "estabilidad_laboral": "Freelance",
+    "region_geografica": "Manizales"
+  }
+]
