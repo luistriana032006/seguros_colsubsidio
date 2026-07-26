@@ -428,3 +428,77 @@ Se detectó y bajó una instancia vieja de `make run` que seguía corriendo con 
 - `apuntes/PARA_NICOLAS.md` quedó desactualizado: no menciona el campo `es_necesidad_declarada` que ahora trae cada recomendación (desde [[Sesión 13]]).
 - El camino de HTTP 500 en `server.py` sigue sin ejercitarse con un caso real — `motor.recomendar()` está diseñado para no lanzar excepción nunca, así que ese branch nunca se dispara con las pruebas normales.
 - No hay tests automatizados (pytest ni similar) en ningún punto del proyecto — toda la verificación hecha hasta ahora fue manual, corrida a mano en cada sesión.
+
+---
+
+## Sesión 17 — 2026-07-25 — Timestamps convertidos a hora de Colombia
+
+### Qué se pidió
+El usuario notó que "Último entrenamiento" en la pestaña de Pesos mostraba una hora que no correspondía a la real en Colombia — todo se estaba mostrando en UTC sin convertir.
+
+### Qué se tocó y por qué
+- `zona_horaria.py` (nuevo): `ZONA_COLOMBIA = ZoneInfo("America/Bogota")`, único punto de conversión compartido.
+- `pesos.py`: `_fecha_legible()` ahora convierte antes de formatear y etiqueta "(Colombia)" en vez de "UTC".
+- `metricas.py`: Sección 4 (actividad por hora) ahora agrupa por hora de Colombia en vez de hora UTC cruda — esto era un bug real, no solo cosmético: las horas pico salían corridas 5 horas. Sección 6 (últimas 10 recomendaciones) también convierte el timestamp mostrado.
+- La base de datos sigue guardando todo en UTC sin cambios — es la práctica correcta (fuente de verdad sin ambigüedad de zona horaria); la conversión es solo en la capa de presentación.
+
+### Verificación
+Se probó `_fecha_legible()` con el timestamp exacto que el usuario reportó (`2026-07-26T03:30:29 UTC`) y dio `2026-07-25 22:30 (Colombia)` — coincide con la hora real que el usuario confirmó.
+
+### Qué falta / qué verificar en la próxima sesión
+- Ninguno de los cambios de esta sesión estaba commiteado al cerrarla.
+
+---
+
+## Sesión 18 — 2026-07-25 — Botón "Reentrenar ahora" en la pestaña de Pesos
+
+### Qué se pidió
+Que la sección de Pesos se actualice en tiempo real o casi tiempo real, sin tener que matar y volver a iniciar el proceso para ver cambios.
+
+### Qué se tocó y por qué
+- Antes de tocar código se separó el problema en dos partes: (1) cambios *externos* al JSON (alguien reentrena por consola aparte) — esto ya se resolvía solo desde [[Sesión 15]] gracias al auto-refresco de 30s + `cache_data(ttl=30)` de `cargar_pesos()`, sin necesidad de reiniciar nada. (2) reentrenar en sí seguía siendo un comando de terminal aparte, sin forma de dispararlo desde el navegador.
+- `pesos.py`: se agregó el botón "🔄 Reentrenar ahora", que importa `scripts.entrenar_motor.entrenar()` y lo corre en el mismo proceso de Streamlit (con `st.spinner` mientras calcula), limpia el cache de `cargar_pesos` y hace `st.rerun()` — cero terminal, cero reinicio del proceso.
+
+### Decisiones propias (no explícitas en el pedido original)
+- El import de `scripts.entrenar_motor` se hace de forma perezosa (dentro del handler del botón, no a nivel de módulo) para no acoplar `pesos.py` a `scripts/` en el arranque normal de la página — solo se importa si alguien realmente aprieta el botón.
+
+### Verificación
+Se probó el ciclo completo por fuera de Streamlit (`entrenar()` → `cargar_pesos.clear()` → `cargar_pesos()` fresco) y funcionó: el JSON quedó con `fecha_entrenamiento` actualizada y `registros_reales` en 27.
+
+### Qué falta / qué verificar en la próxima sesión
+- Ninguno de los cambios de esta sesión estaba commiteado al cerrarla.
+
+---
+
+## Sesión 19 — 2026-07-25 — `apuntes/pitch.txt` (fuera de git)
+
+### Qué se pidió
+Un pitch de 2 minutos (máx. 300 palabras) sobre el motor, en 5 partes: problema en una frase / cómo funciona sin jerga / por qué es defendible ante un regulador / diferencia con pedirle a un LLM / cierre con impacto real. Tono seguro y directo. Después, guardarlo en un `.txt` para el equipo y dejarlo fuera de git.
+
+### Qué se tocó y por qué
+- `apuntes/pitch.txt` (nuevo, no versionado): 299 palabras, verificado con `wc -w` antes de entregarlo (dos rondas de recorte, arrancó en 317).
+- `.gitignore`: se agregó `/apuntes/pitch.txt` explícito — no un patrón `*.txt` amplio, para no terminar ignorando por accidente otro `.txt` legítimo del proyecto más adelante.
+
+### Verificación
+Confirmado con `git status --ignored` que el archivo queda fuera del control de versiones.
+
+### Qué falta / qué verificar en la próxima sesión
+- El `.gitignore` sí quedó modificado y pendiente de subir — la regla en sí es código de proyecto, aunque el archivo que protege no lo sea.
+
+---
+
+## Sesión 20 — 2026-07-25 — `README.md` profesional + link al video del dashboard
+
+### Qué se pidió
+Agregar al README un link a un video de Google Drive que explica el dashboard, y darle una vuelta profesional / estándar para este tipo de proyectos — yendo más allá si hacía falta, con la condición explícita de no perder el rumbo de lo que realmente es el proyecto.
+
+### Qué se tocó y por qué
+- Se releyó el código actual (`motor.py`, `Makefile`, estructura completa de archivos) antes de escribir, porque el README anterior describía la lógica de CAPA 2/3 de antes de [[Sesión 13]] (rankeaba solo dentro de la necesidad declarada) — ya no correspondía al motor real.
+- `README.md` reescrito completo: tabla de contenidos, diagrama de arquitectura en ASCII (perfil → `motor.py` → las 3 interfaces → `data/motor.db` → dashboards), sección "Demo en video" con el link pedido, instalación/arranque rápido, sección de reentrenamiento con datos reales (existía la funcionalidad desde [[Sesión 13]] pero nunca se había documentado en el README), sección de cumplimiento regulatorio (Ley 1266/1581 — ya validada en el pitch de [[Sesión 19]], pero nunca puesta en el README), y la estructura del proyecto actualizada con todos los archivos nuevos (`colores.py`, `zona_horaria.py`, `dashboard_pesos.py`, `metricas.py`, `pesos.py`, `.streamlit/`).
+
+### Decisiones propias (no explícitas en el pedido original)
+- No se agregaron badges de CI/build/license — no existe pipeline de CI ni licencia definida en este proyecto, y ponerlos hubiera sido aparentar algo que no está. Se priorizó la condición explícita de "no perder el rumbo" sobre verse más "estándar" a costa de inventar señales que no son reales.
+- La sección de cumplimiento regulatorio y el diagrama de arquitectura no estaban pedidos palabra por palabra, pero se derivan directo de contenido ya validado en sesiones anteriores (el pitch, la "Regla crítica" que ya existía) — no se inventó ningún dato nuevo sobre el proyecto para rellenar.
+
+### Qué falta / qué verificar en la próxima sesión
+- Nada pendiente de esta sesión. Con esto, la documentación de las Sesiones 1 a 20 queda al día con el estado real del código.

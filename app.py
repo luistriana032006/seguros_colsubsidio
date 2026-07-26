@@ -1,9 +1,9 @@
 """Interfaz Streamlit para probar motor.recomendar() manualmente, con las métricas del motor."""
 import streamlit as st
 
-from metricas import render_metricas
+from dashboards.metricas import render_metricas
+from dashboards.pesos import render_pesos
 from motor import recomendar, registrar
-from pesos import render_pesos
 
 st.set_page_config(page_title="Motor de recomendación de seguros", page_icon="🛡️", layout="wide")
 st.title("Motor de recomendación de seguros")

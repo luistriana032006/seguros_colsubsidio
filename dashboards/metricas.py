@@ -18,9 +18,10 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from colores import AMARILLO, AZUL
+from comun.colores import AMARILLO, AZUL
+from comun.zona_horaria import ZONA_COLOMBIA
 
-RAIZ = Path(__file__).resolve().parent
+RAIZ = Path(__file__).resolve().parent.parent  # dashboards/metricas.py -> raíz del repo
 RUTA_DB = RAIZ / "data" / "motor.db"
 
 
@@ -125,16 +126,17 @@ def render_metricas():
 
     # --- Sección 4: actividad en el tiempo ---
     st.header("4. Actividad en el tiempo")
+    st.caption("Hora de Colombia. Se guarda en UTC (ver motor.registrar()), se convierte solo para mostrar.")
 
     timestamps = pd.to_datetime(recomendaciones_df["timestamp"], utc=True, errors="coerce").dropna()
     if len(timestamps) < 5:
         st.info("Aún no hay suficientes datos.")
     else:
-        por_hora = timestamps.dt.hour.value_counts().sort_index()
+        por_hora = timestamps.dt.tz_convert(ZONA_COLOMBIA).dt.hour.value_counts().sort_index()
         por_hora = por_hora.reindex(range(24), fill_value=0)
         fig_actividad = px.line(
             x=por_hora.index, y=por_hora.values,
-            labels={"x": "Hora del día", "y": "Recomendaciones"},
+            labels={"x": "Hora del día (Colombia)", "y": "Recomendaciones"},
             markers=True,
         )
         fig_actividad.update_traces(line_color=AZUL, marker_color=AZUL)
@@ -168,7 +170,13 @@ def render_metricas():
         )
         .sort_values("timestamp", ascending=False)
         .head(10)
-    )[["timestamp", "necesidad", "producto_principal", "confianza", "score", "canal"]]
+    )[["timestamp", "necesidad", "producto_principal", "confianza", "score", "canal"]].copy()
+    ultimas["timestamp"] = (
+        pd.to_datetime(ultimas["timestamp"], utc=True, errors="coerce")
+        .dt.tz_convert(ZONA_COLOMBIA)
+        .dt.strftime("%Y-%m-%d %H:%M:%S")
+    )
+    ultimas = ultimas.rename(columns={"timestamp": "timestamp (Colombia)"})
     st.dataframe(ultimas, use_container_width=True, hide_index=True)
 
     # --- Sección 7: distribución por canal ---

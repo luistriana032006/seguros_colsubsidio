@@ -27,3 +27,6 @@ venv/
 .claude/
 
 /apuntes/deprecados
+
+# Material de pitch para el equipo -- no es código ni documentación del repo.
+/apuntes/pitch.txt

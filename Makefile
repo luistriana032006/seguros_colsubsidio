@@ -28,10 +28,10 @@ server: ## Levanta la API FastAPI del motor (puerto 8000, docs en /docs)
 	$(PYTHON) server.py
 
 dashboard: ## Levanta el dashboard de métricas en vivo (puerto 8502)
-	$(PYTHON) -m streamlit run dashboard.py --server.port 8502
+	$(PYTHON) -m streamlit run dashboards/dashboard.py --server.port 8502
 
 pesos: ## Levanta el dashboard de pesos de hipótesis en vivo (puerto 8503)
-	$(PYTHON) -m streamlit run dashboard_pesos.py --server.port 8503
+	$(PYTHON) -m streamlit run dashboards/dashboard_pesos.py --server.port 8503
 
 app: ## Levanta la demo Streamlit de prueba manual del motor (puerto 8501)
 	$(PYTHON) -m streamlit run app.py --server.port 8501

@@ -1,35 +1,38 @@
 {
-  "version": "v1",
-  "fecha_entrenamiento": "2026-07-25T22:20:58.330618+00:00",
-  "total_registros_entrenamiento": 5000,
+  "version": "v2",
+  "fecha_entrenamiento": "2026-07-26T04:04:06.437533+00:00",
+  "total_registros_entrenamiento": 5027,
+  "registros_sinteticos": 5000,
+  "registros_reales": 27,
+  "factor_peso_real": 3,
   "pesos": {
     "salud": {
       "drogueria_activa": {
-        "peso": 0.892,
+        "peso": 0.9005,
         "productos": [
           "SALUD-01",
           "ASMED-01"
         ],
-        "soporte": 347,
-        "total_producto": 389
+        "soporte": 358,
+        "total_producto": 400
       },
       "tiene_dependientes_salud": {
-        "peso": 0.4486,
+        "peso": 0.3807,
         "productos": [
           "ASMED-01"
         ],
         "soporte": 83,
-        "total_producto": 185
+        "total_producto": 196
       }
     },
     "familia": {
       "ahorro_mediano_plazo": {
-        "peso": 0.8971,
+        "peso": 0.9022,
         "productos": [
           "VIDAAH-01"
         ],
-        "soporte": 305,
-        "total_producto": 340
+        "soporte": 311,
+        "total_producto": 346
       },
       "salario_bajo_familia": {
         "peso": 0.9143,
@@ -66,38 +69,38 @@
     },
     "hogar": {
       "salario_alto_hogar": {
-        "peso": 0.7954,
+        "peso": 0.7975,
         "productos": [
           "HOGAR-01"
         ],
-        "soporte": 447,
-        "total_producto": 562
+        "soporte": 449,
+        "total_producto": 564
       },
       "salario_bajo_medio_hogar": {
-        "peso": 0.9516,
+        "peso": 0.952,
         "productos": [
           "ARRENDA-01"
         ],
-        "soporte": 334,
-        "total_producto": 351
+        "soporte": 335,
+        "total_producto": 352
       },
       "vivienda_propia": {
-        "peso": 0.3292,
+        "peso": 0.3363,
         "productos": [
           "HOGAR-01"
         ],
-        "soporte": 185,
-        "total_producto": 562
+        "soporte": 187,
+        "total_producto": 564
       }
     },
     "movilidad": {
       "periferia_salario_bajo": {
-        "peso": 0.9185,
+        "peso": 0.9225,
         "productos": [
           "MOTO-01"
         ],
-        "soporte": 327,
-        "total_producto": 356
+        "soporte": 333,
+        "total_producto": 362
       },
       "edad_joven_bici": {
         "peso": 0.6823,
@@ -108,12 +111,12 @@
         "total_producto": 532
       },
       "vehiculo_moto": {
-        "peso": 0.25,
+        "peso": 0.2861,
         "productos": [
           "MOTO-01"
         ],
-        "soporte": 89,
-        "total_producto": 356
+        "soporte": 95,
+        "total_producto": 362
       },
       "vehiculo_bici": {
         "peso": 0.0883,
@@ -152,12 +155,12 @@
     },
     "credito": {
       "salario_medio_bajo_credito": {
-        "peso": 0.7989,
+        "peso": 0.8,
         "productos": [
           "DEUDOR-VIDA-01"
         ],
-        "soporte": 433,
-        "total_producto": 542
+        "soporte": 434,
+        "total_producto": 543
       }
     }
   }

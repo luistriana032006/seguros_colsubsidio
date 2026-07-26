@@ -16,9 +16,10 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from colores import AZUL
+from comun.colores import AZUL
+from comun.zona_horaria import ZONA_COLOMBIA
 
-RAIZ = Path(__file__).resolve().parent
+RAIZ = Path(__file__).resolve().parent.parent  # dashboards/pesos.py -> raíz del repo
 RUTA_PESOS = RAIZ / "data" / "modelos" / "pesos_hipotesis.json"
 RUTA_PESOS_ANTERIOR = RAIZ / "data" / "modelos" / "pesos_hipotesis_anterior.json"
 
@@ -62,8 +63,12 @@ def _nivel(peso):
 
 
 def _fecha_legible(fecha_iso):
+    """fecha_entrenamiento se guarda en UTC (ver scripts/entrenar_motor.py) -- se
+    muestra convertida a hora de Colombia para que no confunda."""
     try:
-        return datetime.fromisoformat(fecha_iso).strftime("%Y-%m-%d %H:%M UTC")
+        fecha_utc = datetime.fromisoformat(fecha_iso)
+        fecha_colombia = fecha_utc.astimezone(ZONA_COLOMBIA)
+        return fecha_colombia.strftime("%Y-%m-%d %H:%M") + " (Colombia)"
     except (TypeError, ValueError):
         return fecha_iso or "desconocida"
 
@@ -83,16 +88,37 @@ def _activar_autorefresco():
 
 
 def render_pesos():
-    """Dibuja las 5 secciones de pesos en la página actual."""
+    """Dibuja las 5 secciones de pesos en la página actual.
+
+    Dos formas de ver pesos nuevos sin matar el proceso: (1) si algo externo
+    reentrena (otra terminal, el bot, un cron futuro), el auto-refresco de 30s
+    + el cache_data(ttl=30) de cargar_pesos() lo recogen solos en <=30s. (2) el
+    botón "Reentrenar ahora" de acá abajo corre scripts/entrenar_motor.py en
+    este mismo proceso y refresca al toque, sin terminal ni reinicio.
+    """
     _activar_autorefresco()
 
-    if st.button("Refrescar ahora", key="pesos_refrescar"):
-        cargar_pesos.clear()
+    col_refrescar, col_reentrenar = st.columns([1, 2])
+    with col_refrescar:
+        if st.button("Refrescar ahora", key="pesos_refrescar"):
+            cargar_pesos.clear()
+    with col_reentrenar:
+        if st.button("🔄 Reentrenar ahora (recalcula con los datos actuales)", key="pesos_reentrenar"):
+            try:
+                with st.spinner("Recalculando pesos con los datos sintéticos + reales actuales..."):
+                    from scripts.entrenar_motor import entrenar as _entrenar
+
+                    _entrenar()
+                cargar_pesos.clear()
+                st.success("Pesos recalculados.")
+                st.rerun()
+            except Exception as error:
+                st.error(f"No se pudo reentrenar: {error}")
 
     datos = cargar_pesos(RUTA_PESOS)
 
     if datos is None:
-        st.info("No hay modelo entrenado. Corre: python3 scripts/entrenar_motor.py")
+        st.info("No hay modelo entrenado. Corre: python3 scripts/entrenar_motor.py (o el botón de arriba).")
         return
 
     tabla = _aplanar(datos)
