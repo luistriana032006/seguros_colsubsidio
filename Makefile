@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 PYTHON ?= python3
 
 .PHONY: help install setup db datos entrenar motor server dashboard app mcp run clean
@@ -35,8 +36,34 @@ app: ## Levanta la demo Streamlit de prueba manual del motor (puerto 8501)
 mcp: ## Levanta el servidor MCP (stdio) para que un LLM lo use como herramienta
 	$(PYTHON) mcp_server.py
 
-run: ## Levanta server + dashboard + app juntos (./iniciar.sh)
-	./iniciar.sh
+run: install ## Levanta server + dashboard + app juntos -- Ctrl+C detiene los tres
+	@# mkdir+credentials.toml evita el prompt interactivo de bienvenida de Streamlit
+	@# ("Email:") que aparece la primera vez que se corre en una máquina y bloquea
+	@# la terminal esperando input -- Streamlit lo activa cuando no existe este
+	@# archivo, sin importar variables de entorno, así que hay que crearlo antes.
+	@mkdir -p ~/.streamlit
+	@if [ ! -f ~/.streamlit/credentials.toml ]; then \
+		printf '[general]\nemail = ""\n' > ~/.streamlit/credentials.toml; \
+	fi
+	@PIDS=(); \
+	detener_todo() { \
+		echo ""; \
+		echo "Deteniendo procesos..."; \
+		for pid in "$${PIDS[@]}"; do \
+			kill "$$pid" 2>/dev/null || true; \
+		done; \
+	}; \
+	trap detener_todo EXIT INT TERM; \
+	echo "Levantando el servidor del motor en http://localhost:8000 (docs en http://localhost:8000/docs) ..."; \
+	$(PYTHON) server.py & \
+	PIDS+=("$$!"); \
+	echo "Levantando el dashboard de métricas en http://localhost:8502 ..."; \
+	$(PYTHON) -m streamlit run dashboard.py --server.port 8502 & \
+	PIDS+=("$$!"); \
+	echo "Levantando la demo en http://localhost:8501 ..."; \
+	$(PYTHON) -m streamlit run app.py --server.port 8501 & \
+	PIDS+=("$$!"); \
+	wait
 
 clean: ## Borra cachés de Python (__pycache__, *.pyc) -- no toca data/motor.db
 	find . -type d -name "__pycache__" -not -path "./.git/*" -exec rm -rf {} +
