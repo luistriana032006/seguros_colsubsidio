@@ -109,70 +109,83 @@ TIPOS_MASCOTA_VALIDOS = ["perro", "gato", "otro"]
 TIPOS_VEHICULO_VALIDOS = ["carro", "moto", "bici", "ninguno"]
 
 # --- CAPA 2: hipótesis de propensión por necesidad (delta = peso entrenado, PESOS[necesidad][clave]) ---
+# "clave" es el nombre corto de la hipótesis -- coincide exacto con las llaves de
+# data/modelos/pesos_hipotesis.json (scripts/entrenar_motor.py) y es lo que se reporta
+# en hipotesis_activadas (ver apuntes/PARA_NICOLAS.md).
 HIPOTESIS = {
     "salud": [
         {"cond": lambda p: p.get("usa_drogueria") is True, "delta": PESOS["salud"]["drogueria_activa"],
-         "candidatos": ["SALUD-01", "ASMED-01"], "desc": "usa_drogueria=True"},
+         "candidatos": ["SALUD-01", "ASMED-01"], "clave": "drogueria_activa",
+         "desc": "usa_drogueria=True"},
         {"cond": lambda p: p.get("tiene_dependientes") is True,
          "delta": PESOS["salud"]["tiene_dependientes_salud"],
-         "candidatos": ["ASMED-01"], "desc": "tiene_dependientes=True"},
+         "candidatos": ["ASMED-01"], "clave": "tiene_dependientes_salud",
+         "desc": "tiene_dependientes=True"},
     ],
     "familia": [
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) == "medio_alto"
                             and p.get("edad") is not None and 36 <= p["edad"] <= 55,
          "delta": PESOS["familia"]["ahorro_mediano_plazo"], "candidatos": ["VIDAAH-01"],
-         "desc": "rango_salarial en Medio_alto y edad entre 36 y 55"},
+         "clave": "ahorro_mediano_plazo", "desc": "rango_salarial en Medio_alto y edad entre 36 y 55"},
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) == "bajo",
          "delta": PESOS["familia"]["salario_bajo_familia"],
-         "candidatos": ["APEXEQ-PAL-01"], "desc": "rango_salarial en Bajo"},
+         "candidatos": ["APEXEQ-PAL-01"], "clave": "salario_bajo_familia",
+         "desc": "rango_salarial en Bajo"},
         {"cond": lambda p: p.get("edad") is not None and p["edad"] >= 55,
          "delta": PESOS["familia"]["mayor_55"],
-         "candidatos": ["EXEQ-01"], "desc": "edad >= 55"},
+         "candidatos": ["EXEQ-01"], "clave": "mayor_55", "desc": "edad >= 55"},
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("bajo", "medio"),
          "delta": PESOS["familia"]["salario_bajo_medio_familia"],
-         "candidatos": ["ASMULT-01"], "desc": "rango_salarial en Bajo o Medio"},
+         "candidatos": ["ASMULT-01"], "clave": "salario_bajo_medio_familia",
+         "desc": "rango_salarial en Bajo o Medio"},
         {"cond": lambda p: p.get("tiene_dependientes") is True,
          "delta": PESOS["familia"]["tiene_dependientes_familia"],
-         "candidatos": ["VIDA-01"], "desc": "tiene_dependientes=True"},
+         "candidatos": ["VIDA-01"], "clave": "tiene_dependientes_familia",
+         "desc": "tiene_dependientes=True"},
     ],
     "hogar": [
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("medio_alto", "alto"),
          "delta": PESOS["hogar"]["salario_alto_hogar"],
-         "candidatos": ["HOGAR-01"], "desc": "rango_salarial en Medio_alto o Alto"},
+         "candidatos": ["HOGAR-01"], "clave": "salario_alto_hogar",
+         "desc": "rango_salarial en Medio_alto o Alto"},
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("bajo", "medio"),
          "delta": PESOS["hogar"]["salario_bajo_medio_hogar"],
-         "candidatos": ["ARRENDA-01"], "desc": "rango_salarial en Bajo o Medio"},
+         "candidatos": ["ARRENDA-01"], "clave": "salario_bajo_medio_hogar",
+         "desc": "rango_salarial en Bajo o Medio"},
         {"cond": lambda p: p.get("tipo_vivienda") == "propia",
          "delta": PESOS["hogar"]["vivienda_propia"],
-         "candidatos": ["HOGAR-01"], "desc": "tipo_vivienda=propia"},
+         "candidatos": ["HOGAR-01"], "clave": "vivienda_propia", "desc": "tipo_vivienda=propia"},
     ],
     "movilidad": [
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("bajo", "medio")
                             and p.get("ciudad") in MUNICIPIOS_PERIFERICOS,
          "delta": PESOS["movilidad"]["periferia_salario_bajo"], "candidatos": ["MOTO-01"],
+         "clave": "periferia_salario_bajo",
          "desc": "rango_salarial en Bajo/Medio y ciudad periférica (Soacha/Mosquera/Zipaquirá/Funza)"},
         {"cond": lambda p: p.get("edad") is not None and 20 <= p["edad"] <= 35,
          "delta": PESOS["movilidad"]["edad_joven_bici"],
-         "candidatos": ["BICI-01"], "desc": "edad entre 20 y 35"},
+         "candidatos": ["BICI-01"], "clave": "edad_joven_bici", "desc": "edad entre 20 y 35"},
         {"cond": lambda p: p.get("tipo_vehiculo") == "moto",
          "delta": PESOS["movilidad"]["vehiculo_moto"],
-         "candidatos": ["MOTO-01"], "desc": "tipo_vehiculo=moto"},
+         "candidatos": ["MOTO-01"], "clave": "vehiculo_moto", "desc": "tipo_vehiculo=moto"},
         {"cond": lambda p: p.get("tipo_vehiculo") == "bici",
          "delta": PESOS["movilidad"]["vehiculo_bici"],
-         "candidatos": ["BICI-01"], "desc": "tipo_vehiculo=bici"},
+         "candidatos": ["BICI-01"], "clave": "vehiculo_bici", "desc": "tipo_vehiculo=bici"},
     ],
     "mascotas": [
         {"cond": lambda p: p.get("tiene_mascota") is True,
          "delta": PESOS["mascotas"]["tiene_mascota"],
-         "candidatos": ["PET-SEG-01"], "desc": "tiene_mascota=True"},
+         "candidatos": ["PET-SEG-01"], "clave": "tiene_mascota", "desc": "tiene_mascota=True"},
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("bajo", "medio"),
          "delta": PESOS["mascotas"]["salario_bajo_medio_mascota"],
-         "candidatos": ["PET-PREP-01"], "desc": "rango_salarial en Bajo o Medio"},
+         "candidatos": ["PET-PREP-01"], "clave": "salario_bajo_medio_mascota",
+         "desc": "rango_salarial en Bajo o Medio"},
     ],
     "credito": [
         {"cond": lambda p: RANGO_TIERS.get(p.get("rango_salarial")) in ("medio", "bajo"),
          "delta": PESOS["credito"]["salario_medio_bajo_credito"],
-         "candidatos": ["DEUDOR-VIDA-01"], "desc": "rango_salarial en Medio o Bajo"},
+         "candidatos": ["DEUDOR-VIDA-01"], "clave": "salario_medio_bajo_credito",
+         "desc": "rango_salarial en Medio o Bajo"},
     ],
 }
 
@@ -199,11 +212,18 @@ def _productos_no_elegibles_por_edad(edad):
 
 
 def _evaluar_necesidad(necesidad, perfil):
-    """CAPA 1 + CAPA 2: filtra por elegibilidad dura y acumula score por hipótesis."""
+    """CAPA 1 + CAPA 2: filtra por elegibilidad dura y acumula score por hipótesis.
+
+    hipotesis_activadas reporta solo el nombre corto de cada hipótesis (clave de
+    data/modelos/pesos_hipotesis.json). claves_por_candidato guarda, por producto,
+    qué claves aportaron a su score -- lo usa recomendar() para armar `razon` sin
+    depender de parsear el texto de hipotesis_activadas.
+    """
     bloqueados = _productos_no_elegibles_por_edad(perfil.get("edad")) | PRODUCTOS_EXCLUIDOS_SIEMPRE
 
     scores = {}
     hipotesis_activadas = []
+    claves_por_candidato = {}
 
     for regla in HIPOTESIS.get(necesidad, []):
         if not regla["cond"](perfil):
@@ -211,17 +231,19 @@ def _evaluar_necesidad(necesidad, perfil):
         candidatos_validos = [c for c in regla["candidatos"] if c not in bloqueados]
         if not candidatos_validos:
             continue
-        hipotesis_activadas.append(f"{regla['desc']} → +{regla['delta']} a {', '.join(candidatos_validos)}")
+        hipotesis_activadas.append(regla["clave"])
         for candidato in candidatos_validos:
             scores[candidato] = scores.get(candidato, 0.0) + regla["delta"]
+            claves_por_candidato.setdefault(candidato, []).append(regla["clave"])
 
     if necesidad == "mascotas" and perfil.get("ciudad") == "Bucaramanga" and scores:
         ajuste = PESOS["mascotas"]["bucaramanga_mascota"]
         for candidato in list(scores):
             scores[candidato] += ajuste
-        hipotesis_activadas.append(f"ciudad=Bucaramanga → ajuste {ajuste:+.4f} a candidatos de mascotas (DANE)")
+            claves_por_candidato.setdefault(candidato, []).append("bucaramanga_mascota")
+        hipotesis_activadas.append("bucaramanga_mascota")
 
-    return scores, hipotesis_activadas
+    return scores, hipotesis_activadas, claves_por_candidato
 
 
 def _campos_verificados(producto_id):
@@ -386,7 +408,7 @@ def recomendar(perfil: dict) -> dict:
         if necesidad not in PRODUCTOS_RESPALDO:
             raise ValueError(f"necesidad no reconocida: {necesidad!r}")
 
-        scores, hipotesis_activadas = _evaluar_necesidad(necesidad, perfil)
+        scores, hipotesis_activadas, claves_por_candidato = _evaluar_necesidad(necesidad, perfil)
         seleccion, alternativa_id = _seleccionar(scores)
 
         if seleccion is None or seleccion[1] <= UMBRAL_RESPALDO:
@@ -407,10 +429,10 @@ def recomendar(perfil: dict) -> dict:
 
         producto_id, score_final = seleccion
         score_reportado = round(min(score_final, 1.0), 2)
-        razones_principal = [h for h in hipotesis_activadas if producto_id in h]
+        razones_principal = claves_por_candidato.get(producto_id, [])
         razon = (
             f"Se recomienda {producto_id} (necesidad: {necesidad}) por: "
-            f"{'; '.join(razones_principal) if razones_principal else 'score acumulado de la categoría'}. "
+            f"{', '.join(razones_principal) if razones_principal else 'score acumulado de la categoría'}. "
             f"Score total: {score_reportado:.2f}."
         )
 
