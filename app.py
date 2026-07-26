@@ -1,7 +1,7 @@
 """Interfaz Streamlit para probar motor.recomendar() manualmente."""
 import streamlit as st
 
-from motor import recomendar
+from motor import recomendar, registrar
 
 st.set_page_config(page_title="Motor de recomendación de seguros", page_icon="🛡️")
 st.title("Motor de recomendación de seguros")
@@ -53,7 +53,9 @@ if st.button("Recomendar"):
         "tipo_vehiculo": tipo_vehiculo,
     }
     try:
-        st.session_state["resultado"] = recomendar(perfil)
+        resultado = recomendar(perfil)
+        registrar(perfil, resultado, canal="prueba")
+        st.session_state["resultado"] = resultado
         st.session_state["error"] = None
     except Exception as error:
         st.session_state["resultado"] = None
