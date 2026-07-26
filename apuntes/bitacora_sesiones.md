@@ -225,4 +225,84 @@ Las 4 pruebas pedidas, corridas contra el servidor real (`python3 server.py` en 
 ### Qué falta / qué verificar en la próxima sesión
 - El camino de HTTP 500 (excepción inesperada de `motor.recomendar()`) no se ejercitó realmente porque `motor.recomendar()` está diseñado para no lanzar nunca — quedaría pendiente forzarlo artificialmente si se quiere probar ese branch específico.
 - `reload=True` en `uvicorn.run()` es cómodo para desarrollo pero no es el modo recomendado para lo que sea que se despliegue durante el hackathon — revisar si hace falta un modo de arranque sin autoreload para esa parte.
-- Ninguno de los cambios de las Sesiones 3 a 8 está commiteado todavía (sigue todo en el working tree).
+- Ninguno de los cambios de las Sesiones 3 a 8 está commiteado todavía (sigue todo en el working tree). **Resuelto**: se subieron junto con `apuntes/PARA_NICOLAS.md` en el commit `9deebeb` ([[Sesión 9]] lo confirma).
+
+---
+
+## Sesión 9 — 2026-07-25 — `hipotesis_activadas` pasa a formato corto + `apuntes/PARA_NICOLAS.md`
+
+### Qué se pidió
+Crear `apuntes/PARA_NICOLAS.md` (guía de conexión al motor, contenido exacto dado). Después, ajustar `motor.py` para que `hipotesis_activadas` devuelva solo el nombre corto de cada hipótesis (la clave de `data/modelos/pesos_hipotesis.json`, ej. `"drogueria_activa"`) en vez del texto largo (`"usa_drogueria=True → +0.892 a SALUD-01, ASMED-01"`), sin cambiar nada más del comportamiento. Actualizar el ejemplo en `PARA_NICOLAS.md` para que coincidiera, y subir todo a GitHub.
+
+### Qué se tocó y por qué
+- `apuntes/PARA_NICOLAS.md` (nuevo): contenido exacto pedido — ya incluía el ejemplo en formato corto desde el principio, así que cuando después se pidió "actualizarlo" no hizo falta tocarlo, solo confirmar que ya coincidía.
+- `motor.py`: se agregó una `"clave"` a cada regla dentro de `HIPOTESIS` (coincide exacto con las llaves de `pesos_hipotesis.json`). `_evaluar_necesidad()` ahora appendea `regla["clave"]` a `hipotesis_activadas` en vez de armar el string largo.
+- Efecto colateral que hubo que resolver para no romper `razon`: esa construcción dependía de buscar el `producto_id` como substring dentro del texto largo (`if producto_id in h`) — con claves cortas ese truco deja de funcionar. Se agregó `claves_por_candidato` (dict candidato → lista de claves), devuelto por `_evaluar_necesidad()`, que `recomendar()` usa para armar `razon` sin parsear texto.
+
+### Decisiones propias (no explícitas en el pedido original)
+- La corrección de `razon` vía `claves_por_candidato` no estaba pedida explícitamente ("no cambies nada más"), pero era necesaria: sin ella, `razon` iba a decir siempre "score acumulado de la categoría" para toda recomendación, en vez de citar la hipótesis real que la disparó — una regresión silenciosa que el pedido no anticipaba.
+
+### Verificación
+Los 3 casos de `motor.py` con el nuevo formato (`["drogueria_activa"]`, etc.), `producto_principal` sin cambios frente al formato viejo. `curl` contra `server.py` (que ya estaba corriendo con `reload=True`) recogió el cambio solo, sin reiniciar nada a mano — confirma que la recarga automática de `uvicorn` funciona con cambios en `motor.py`. La DB confirma que guarda el nuevo formato tal cual lo devuelve `recomendar()`.
+
+Commiteado y subido a GitHub: `9deebeb..184d709`.
+
+### Qué falta / qué verificar en la próxima sesión
+- Nada pendiente de esta sesión.
+
+---
+
+## Sesión 10 — 2026-07-25 — `motor.py` devuelve 3 recomendaciones + auto-refresco real en `dashboard.py`
+
+### Qué se pidió
+Dos cambios: (1) `recomendar()` deja de devolver `producto_principal`/`producto_alternativa` y pasa a devolver una lista `recomendaciones` con las 3 mejores opciones (posición, producto_id, nombre, categoría, score, confianza, razón), completando con productos de respaldo de **otras** categorías si hacen falta, sin repetir productos ni incluir los excluidos — con la cascada de cambios que eso implica en `registrar()`, `server.py`, `apuntes/PARA_NICOLAS.md` y `app.py`. (2) `dashboard.py` necesita auto-refresco real (el `st.cache_data(ttl=10)` que ya tenía no recargaba la página sola) vía `streamlit_autorefresh`, con fallback a JavaScript puro si el paquete no está disponible.
+
+### Qué se tocó y por qué
+- `motor.py`: `_seleccionar()` (principal + alternativa) reemplazado por `_ordenar_candidatos()` (todos los candidatos con score > 0, ordenados) + `_completar_con_respaldo()` (rellena con los backups de las **otras** 5 necesidades, nunca la propia, nunca repitiendo) + `_armar_recomendacion()` (arma cada item leyendo nombre/categoría del catálogo). `recomendar()` reescrito para devolver siempre `{"recomendaciones": [...], "hipotesis_activadas": [...], "necesidad": ...}` — incluso el camino de excepción interna ahora devuelve 3 recomendaciones de respaldo (`_recomendaciones_respaldo()`) en vez del viejo formato de un solo producto, para que el contrato de salida sea uniforme en todos los casos.
+- `registrar()`: guarda la lista completa en una columna nueva `recomendaciones_json`, y sigue llenando `producto_principal`/`producto_alternativa`/`categoria`/`score`/`confianza`/`razon` (tomados de las posiciones 1 y 2) por compatibilidad con las queries que ya tenía `dashboard.py`. La columna se auto-migra con `ALTER TABLE` si la DB es de antes de este cambio — no depende de que se corra `crear_db.py` a mano.
+- `scripts/crear_db.py`: `ESQUEMA` actualizado con la columna nueva para bases desde cero, más la misma migración para bases existentes.
+- `server.py`: cero cambios de código — ya devolvía tal cual lo que retornara `recomendar()`, así que el formato nuevo se propagó solo.
+- `app.py`: la sección de resultado ahora itera sobre `resultado["recomendaciones"]` mostrando las 3 (antes mostraba producto_principal/alternativa), y además maneja el caso `resultado.get("error")` para mostrar una validación fallida en vez de asumir que siempre hay recomendaciones. Se sacó el import de `CATALOGO` (ya no hacía falta — `motor.py` manda el nombre legible en cada item).
+- `apuntes/PARA_NICOLAS.md`: "Qué te devuelvo yo" y "Qué haces tú con eso" reescritas para el formato de lista.
+- `dashboard.py`: bloque de `streamlit_autorefresh` (con fallback a `components.html` + `setTimeout(...reload...)`) agregado justo después de `set_page_config`, antes de cualquier query a la DB. `requirements.txt`: `streamlit-autorefresh>=0.1.0` agregado e instalado.
+
+### Decisiones propias (no explícitas en el pedido original)
+- `UMBRAL_RESPALDO` quedó sin uso tras el rediseño (la vieja lógica "un solo respaldo si el score ≤ 0.3" la reemplazó por completo el mecanismo de relleno a 3) — se eliminó junto con el comentario que lo mencionaba, para no dejar código muerto.
+- El score de los productos de relleno (respaldo de otra categoría) se fijó en `0.0` con confianza `"baja"` — no había fórmula dada para ese caso; `0.0` es honesto, no se calculó ningún score real porque ese producto no pertenece a las hipótesis de la necesidad pedida.
+- "Otras categorías" para el relleno se interpretó literal: nunca se usa el propio respaldo de la necesidad que se está evaluando, solo el de las otras 5 — así que si una necesidad se queda sin candidatos reales, nunca aparece su propio backup salvo que sea uno de los reales ya evaluados.
+
+### Verificación
+Los 3 casos de `motor.py` dan exactamente 3 recomendaciones cada uno, con la posición 1 igual al viejo `producto_principal` (ASMED-01 / VIDAAH-01 / MOTO-01). `curl` contra `server.py` devuelve el formato nuevo sin que se tocara su código. Para el auto-refresco: un POST real escribió en la DB al instante (13→14 filas), confirmando que el dato subyacente cambia apenas llega una recomendación nueva; lo que **no** se pudo verificar al 100% desde este entorno headless es el refresco visual real en una pestaña de navegador abierta con el tiempo corriendo — esa parte la tiene que confirmar el usuario mirando la pantalla. `app.py` y `dashboard.py` levantados en headless sin errores en ambos casos.
+
+### Qué falta / qué verificar en la próxima sesión
+- Confirmar visualmente en un navegador real que el dashboard se refresca solo cada ~10s sin interacción.
+- Ningún cambio de esta sesión estaba commiteado al cerrarla.
+
+---
+
+## Sesión 11 — 2026-07-25 — `mcp_server.py` (servidor MCP)
+
+### Qué se pidió
+Crear `mcp_server.py`: servidor MCP (stdio) con una sola herramienta `recomendar_seguro` que envuelve `motor.recomendar()` + `motor.registrar(canal="whatsapp")`, pensado para que un LLM (el bot de Nicolás) la invoque directamente como tool call, coexistiendo con `server.py` (HTTP) sin reemplazarlo. Instalar `mcp` y agregarlo a `requirements.txt`. Agregar una sección "Conexión vía MCP" al final de `apuntes/PARA_NICOLAS.md`, contenido exacto dado.
+
+### Qué se tocó y por qué
+- `mcp_server.py` (nuevo, raíz): usa el SDK oficial `mcp` (`Server` de bajo nivel, no `FastMCP`) con `@app.list_tools()` y `@app.call_tool()`. `ESQUEMA_ENTRADA` es JSON Schema con los 16 parámetros pedidos (incluye `id_interno`/`id_contacto`, que no forman parte de `CAMPOS_OBLIGATORIOS` de `motor.py` pero sí del contrato completo con Nicolás — se guardan en la tabla `usuarios`). La herramienta arma el perfil desde los argumentos recibidos, llama `recomendar()`, después `registrar(perfil, resultado, canal="whatsapp")` siempre (sin chequear error antes, porque `registrar()` ya ignora los resultados con `"error": true` por su cuenta), y devuelve el JSON como `TextContent`.
+- `requirements.txt`: `mcp>=1.0.0` agregado e instalado (versión real resuelta: 1.28.1).
+- `apuntes/PARA_NICOLAS.md`: sección `## Conexión vía MCP (para el LLM)` agregada al final, contenido exacto pedido.
+
+### Decisiones propias (no explícitas en el pedido original)
+- El snippet de arranque que traía el pedido (`asyncio.run(stdio_server(app))`) no es válido contra el SDK real instalado — `stdio_server()` no recibe un argumento `app`, es un context manager que entrega los streams de lectura/escritura, y `Server.run()` los necesita explícitos junto con las `initialization_options`. Se corrigió al patrón real del SDK:
+  ```python
+  async def main():
+      async with stdio_server() as (read_stream, write_stream):
+          await app.run(read_stream, write_stream, app.create_initialization_options())
+  if __name__ == "__main__":
+      asyncio.run(main())
+  ```
+
+### Verificación
+Arranque con stdin vacío: `exit code 0`, sin traceback (confirma que no hay errores de import/sintaxis ni al inicializar el `Server`). Además, prueba de punta a punta con el **cliente MCP real** del mismo SDK (`initialize` → `list_tools` → `call_tool`) contra el proceso `mcp_server.py` corriendo de verdad — devolvió las 3 recomendaciones correctas (mismo resultado que por HTTP) y quedó registrado en `data/motor.db` con `canal="whatsapp"`, confirmando el flujo completo (herramienta → `recomendar()` → `registrar()`).
+
+### Qué falta / qué verificar en la próxima sesión
+- Nada pendiente de esta sesión.
+- Ningún cambio de las Sesiones 10 y 11 está commiteado todavía (sigue todo en el working tree, incluye `mcp_server.py` sin trackear).

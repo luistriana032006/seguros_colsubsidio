@@ -1,7 +1,7 @@
 """Interfaz Streamlit para probar motor.recomendar() manualmente."""
 import streamlit as st
 
-from motor import CATALOGO, recomendar
+from motor import recomendar
 
 st.set_page_config(page_title="Motor de recomendación de seguros", page_icon="🛡️")
 st.title("Motor de recomendación de seguros")
@@ -61,13 +61,6 @@ if st.button("Recomendar"):
 
 st.header("2. Resultado")
 
-
-def nombre_legible(producto_id):
-    if producto_id is None or producto_id not in CATALOGO.index:
-        return producto_id
-    return str(CATALOGO.loc[producto_id, "nombre_producto"])
-
-
 error = st.session_state.get("error")
 resultado = st.session_state.get("resultado")
 
@@ -75,30 +68,36 @@ if error:
     st.error(f"recomendar() lanzó una excepción: {error}")
 elif resultado is None:
     st.caption("Completa el formulario y presiona “Recomendar” para ver un resultado.")
+elif resultado.get("error") is True:
+    st.error(resultado.get("mensaje", "Perfil inválido."))
+    if resultado.get("campos_faltantes"):
+        st.markdown(f"**Campos faltantes:** {', '.join(resultado['campos_faltantes'])}")
+    if resultado.get("campos_invalidos"):
+        st.markdown("**Campos inválidos:**")
+        for detalle in resultado["campos_invalidos"]:
+            st.markdown(f"- {detalle}")
 else:
-    principal_id = resultado["producto_principal"]
-    st.markdown(f"**Producto principal:** {nombre_legible(principal_id)} — `{principal_id}`")
+    st.markdown(f"**Necesidad:** {resultado['necesidad']}")
 
-    alternativa_id = resultado["producto_alternativa"]
-    if alternativa_id:
-        st.markdown(f"**Producto alternativa:** {nombre_legible(alternativa_id)} — `{alternativa_id}`")
-    else:
-        st.markdown("**Producto alternativa:** ninguna")
+    for item in resultado["recomendaciones"]:
+        st.subheader(f"{item['posicion']}. {item['nombre']} — `{item['producto_id']}`")
+        st.markdown(f"**Categoría:** {item['categoria']}")
 
-    st.markdown(f"**Categoría:** {resultado['categoria']}")
+        confianza = item["confianza"]
+        texto_confianza = f"Confianza: {confianza}"
+        if confianza == "alta":
+            st.success(texto_confianza)
+        elif confianza == "media":
+            st.warning(texto_confianza)
+        else:
+            st.error(texto_confianza)
 
-    confianza = resultado["confianza"]
-    texto_confianza = f"Confianza: {confianza}"
-    if confianza == "alta":
-        st.success(texto_confianza)
-    elif confianza == "media":
-        st.warning(texto_confianza)
-    else:
-        st.error(texto_confianza)
+        score = float(item["score"])
+        st.markdown(f"**Score:** {score:.2f}")
+        st.progress(min(max(score, 0.0), 1.0))
 
-    score = float(resultado["score"])
-    st.markdown(f"**Score:** {score:.2f}")
-    st.progress(min(max(score, 0.0), 1.0))
+        st.markdown("**Razón:**")
+        st.info(item["razon"])
 
     st.markdown("**Hipótesis activadas:**")
     if resultado["hipotesis_activadas"]:
@@ -106,6 +105,3 @@ else:
             st.markdown(f"- {hipotesis}")
     else:
         st.markdown("_Ninguna hipótesis se activó._")
-
-    st.markdown("**Razón:**")
-    st.info(resultado["razon"])

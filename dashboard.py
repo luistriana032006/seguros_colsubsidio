@@ -18,6 +18,18 @@ RUTA_DB = RAIZ / "data" / "motor.db"
 
 st.set_page_config(page_title="Dashboard — motor de recomendación", page_icon="📊", layout="wide")
 
+try:
+    from streamlit_autorefresh import st_autorefresh
+
+    st_autorefresh(interval=10000, limit=None, key="dashboard_refresh")
+except ImportError:
+    import streamlit.components.v1 as components
+
+    components.html(
+        "<script>setTimeout(function(){window.location.reload();}, 10000);</script>",
+        height=0,
+    )
+
 
 @st.cache_data(ttl=10)
 def cargar_datos():

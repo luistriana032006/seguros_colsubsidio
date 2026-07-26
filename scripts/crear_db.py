@@ -57,9 +57,19 @@ CREATE TABLE IF NOT EXISTS recomendaciones (
     hipotesis_activadas TEXT,
     razon TEXT,
     timestamp TEXT,
+    recomendaciones_json TEXT,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 """
+
+
+def _migrar_columna_recomendaciones_json(conexion):
+    """DBs creadas antes de que recomendar() devolviera 3 recomendaciones no tienen
+    esta columna todavía -- CREATE TABLE IF NOT EXISTS no la agrega sola."""
+    columnas = {fila[1] for fila in conexion.execute("PRAGMA table_info(recomendaciones)").fetchall()}
+    if "recomendaciones_json" not in columnas:
+        conexion.execute("ALTER TABLE recomendaciones ADD COLUMN recomendaciones_json TEXT")
+        conexion.commit()
 
 
 def _cargar_catalogo():
@@ -78,6 +88,7 @@ def crear_db():
     try:
         conexion.executescript(ESQUEMA)
         conexion.commit()
+        _migrar_columna_recomendaciones_json(conexion)
 
         total = conexion.execute("SELECT COUNT(*) FROM catalogo").fetchone()[0]
         if total == 0:

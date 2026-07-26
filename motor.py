@@ -71,7 +71,6 @@ RANGO_TIERS = {
 
 MUNICIPIOS_PERIFERICOS = {"Soacha", "Mosquera", "Zipaquirá", "Funza"}
 
-UMBRAL_RESPALDO = 0.3
 UMBRAL_ALTA = 0.7
 UMBRAL_MEDIA = 0.4
 
@@ -85,7 +84,8 @@ ELEGIBILIDAD_DURA = {
 # Nunca compiten por propensión (declaración directa / sin hipótesis estructurable).
 PRODUCTOS_EXCLUIDOS_SIEMPRE = {"INCENDIO-DEUDOR-01", "CARRO-01", "DESEMP-01", "SOAT-01", "VIAJE-01"}
 
-# Productos de respaldo por necesidad, si ningún candidato supera UMBRAL_RESPALDO.
+# Productos de respaldo por necesidad -- rellenan las recomendaciones() que la
+# necesidad no logra completar con candidatos reales de score > 0.
 PRODUCTOS_RESPALDO = {
     "salud": "SALUD-01",
     "familia": "VIDA-01",
@@ -251,22 +251,41 @@ def _campos_verificados(producto_id):
     return sum(1 for columna in COLUMNAS_ESTADO if fila[columna] == "verificado")
 
 
-def _seleccionar(scores):
-    """CAPA 3: producto_principal, producto_alternativa y desempate por campos verificados."""
+def _ordenar_candidatos(scores):
+    """CAPA 3: todos los candidatos con score > 0, de mayor a menor, desempate por campos verificados."""
     candidatos = [(pid, s) for pid, s in scores.items() if s > 0]
-    if not candidatos:
-        return None, None
-
     candidatos.sort(key=lambda item: (-item[1], -_campos_verificados(item[0])))
-    principal = candidatos[0]
+    return candidatos
 
-    alternativa_id = None
-    if len(candidatos) > 1:
-        segundo_id = candidatos[1][0]
-        if CATALOGO.loc[segundo_id, "estado_precio"] == "verificado":
-            alternativa_id = segundo_id
 
-    return principal, alternativa_id
+def _completar_con_respaldo(necesidad, ids_usados, cuantos_faltan):
+    """Rellena hasta 3 recomendaciones con productos de respaldo de OTRAS categorías.
+
+    Nunca repite un producto_id ya usado, nunca la propia necesidad, y como
+    PRODUCTOS_RESPALDO nunca contiene un producto de PRODUCTOS_EXCLUIDOS_SIEMPRE,
+    los excluidos quedan fuera de forma automática.
+    """
+    fillers = []
+    for otra_necesidad, producto_id in PRODUCTOS_RESPALDO.items():
+        if len(fillers) >= cuantos_faltan:
+            break
+        if otra_necesidad == necesidad or producto_id in ids_usados:
+            continue
+        fillers.append(producto_id)
+        ids_usados.add(producto_id)
+    return fillers
+
+
+def _armar_recomendacion(posicion, producto_id, score, razon):
+    return {
+        "posicion": posicion,
+        "producto_id": producto_id,
+        "nombre": str(CATALOGO.loc[producto_id, "nombre_producto"]),
+        "categoria": _categoria(producto_id),
+        "score": round(min(max(score, 0.0), 1.0), 2),
+        "confianza": _confianza(score),
+        "razon": razon,
+    }
 
 
 def _confianza(score):
@@ -398,74 +417,81 @@ def _validar_perfil(perfil):
     }
 
 
+def _recomendaciones_respaldo(necesidad, motivo):
+    """3 recomendaciones de respaldo (sin score real) -- usado cuando algo falla o no hay señal."""
+    principal_necesidad = necesidad if necesidad in PRODUCTOS_RESPALDO else "familia"
+    ids_usados = set()
+    respaldos = [PRODUCTOS_RESPALDO[principal_necesidad]]
+    ids_usados.add(respaldos[0])
+    respaldos += _completar_con_respaldo(principal_necesidad, ids_usados, 2)
+    return [
+        _armar_recomendacion(posicion, producto_id, 0.0, motivo)
+        for posicion, producto_id in enumerate(respaldos, start=1)
+    ]
+
+
 def recomendar(perfil: dict) -> dict:
     error_validacion = _validar_perfil(perfil)
     if error_validacion is not None:
         return error_validacion
 
+    necesidad = perfil.get("necesidad")
+
     try:
-        necesidad = perfil.get("necesidad")
         if necesidad not in PRODUCTOS_RESPALDO:
             raise ValueError(f"necesidad no reconocida: {necesidad!r}")
 
         scores, hipotesis_activadas, claves_por_candidato = _evaluar_necesidad(necesidad, perfil)
-        seleccion, alternativa_id = _seleccionar(scores)
+        candidatos_ordenados = _ordenar_candidatos(scores)
 
-        if seleccion is None or seleccion[1] <= UMBRAL_RESPALDO:
-            score_final = seleccion[1] if seleccion else 0.0
-            producto_id = PRODUCTOS_RESPALDO[necesidad]
-            return {
-                "producto_principal": producto_id,
-                "producto_alternativa": None,
-                "categoria": _categoria(producto_id),
-                "score": round(max(0.0, score_final), 2),
-                "hipotesis_activadas": hipotesis_activadas,
-                "razon": (
-                    f"Ningún candidato superó el umbral de propensión ({UMBRAL_RESPALDO}) "
-                    f"para la necesidad '{necesidad}'; se recomienda el producto de respaldo de la categoría."
-                ),
-                "confianza": _confianza(score_final),
-            }
+        recomendaciones = []
+        ids_usados = set()
+        for producto_id, score in candidatos_ordenados[:3]:
+            ids_usados.add(producto_id)
+            claves = claves_por_candidato.get(producto_id, [])
+            razon = (
+                f"{', '.join(claves)}. Score total: {round(min(max(score, 0.0), 1.0), 2):.2f}."
+                if claves
+                else f"Score acumulado de la categoría '{necesidad}'. Score total: {round(min(max(score, 0.0), 1.0), 2):.2f}."
+            )
+            recomendaciones.append(_armar_recomendacion(0, producto_id, score, razon))
 
-        producto_id, score_final = seleccion
-        score_reportado = round(min(score_final, 1.0), 2)
-        razones_principal = claves_por_candidato.get(producto_id, [])
-        razon = (
-            f"Se recomienda {producto_id} (necesidad: {necesidad}) por: "
-            f"{', '.join(razones_principal) if razones_principal else 'score acumulado de la categoría'}. "
-            f"Score total: {score_reportado:.2f}."
-        )
+        faltan = 3 - len(recomendaciones)
+        if faltan > 0:
+            razon_respaldo = (
+                f"Producto de respaldo general -- no hay señal suficiente en tu perfil "
+                f"para la necesidad '{necesidad}' como para llenar las 3 posiciones."
+            )
+            for producto_id in _completar_con_respaldo(necesidad, ids_usados, faltan):
+                recomendaciones.append(_armar_recomendacion(0, producto_id, 0.0, razon_respaldo))
+
+        for posicion, item in enumerate(recomendaciones, start=1):
+            item["posicion"] = posicion
 
         return {
-            "producto_principal": producto_id,
-            "producto_alternativa": alternativa_id,
-            "categoria": _categoria(producto_id),
-            "score": score_reportado,
+            "recomendaciones": recomendaciones,
             "hipotesis_activadas": hipotesis_activadas,
-            "razon": razon,
-            "confianza": _confianza(score_final),
+            "necesidad": necesidad,
         }
 
     except Exception as error:
-        necesidad = perfil.get("necesidad") if isinstance(perfil, dict) else None
-        producto_id = PRODUCTOS_RESPALDO.get(necesidad, PRODUCTOS_RESPALDO["familia"])
-        try:
-            categoria = _categoria(producto_id)
-        except Exception:
-            categoria = "desconocida"
         return {
-            "producto_principal": producto_id,
-            "producto_alternativa": None,
-            "categoria": categoria,
-            "score": 0.0,
+            "recomendaciones": _recomendaciones_respaldo(
+                necesidad, f"Fallo interno al calcular la recomendación ({error}); se devolvió respaldo."
+            ),
             "hipotesis_activadas": [],
-            "razon": f"Fallo interno al calcular la recomendación ({error}); se devolvió el producto de respaldo.",
-            "confianza": "baja",
+            "necesidad": necesidad,
         }
 
 
 def registrar(perfil: dict, resultado: dict, canal: str = "prueba") -> None:
     """Guarda perfil en usuarios y resultado en recomendaciones (data/motor.db, scripts/crear_db.py).
+
+    La lista completa de resultado["recomendaciones"] se serializa en la columna
+    recomendaciones_json (se agrega sola con ALTER TABLE si una DB vieja no la tiene
+    todavía). Las columnas producto_principal/producto_alternativa/categoria/score/
+    confianza/razon se siguen llenando con la posición 1 y 2 de esa lista -- las
+    mantiene por compatibilidad con las queries existentes de dashboard.py.
 
     No registra nada si resultado trae "error": true (perfil inválido, nada que guardar).
     Nunca lanza excepción: si la DB no existe, no tiene las tablas, o falla por cualquier
@@ -477,7 +503,14 @@ def registrar(perfil: dict, resultado: dict, canal: str = "prueba") -> None:
     try:
         conexion = sqlite3.connect(RUTA_DB)
         try:
+            columnas = {fila[1] for fila in conexion.execute("PRAGMA table_info(recomendaciones)").fetchall()}
+            if "recomendaciones_json" not in columnas:
+                conexion.execute("ALTER TABLE recomendaciones ADD COLUMN recomendaciones_json TEXT")
+
             timestamp = datetime.now(timezone.utc).isoformat()
+            recomendaciones = resultado.get("recomendaciones") or []
+            principal = recomendaciones[0] if len(recomendaciones) > 0 else {}
+            alternativa = recomendaciones[1] if len(recomendaciones) > 1 else {}
 
             cursor = conexion.execute(
                 """
@@ -515,19 +548,20 @@ def registrar(perfil: dict, resultado: dict, canal: str = "prueba") -> None:
                 """
                 INSERT INTO recomendaciones (
                     usuario_id, producto_principal, producto_alternativa, categoria,
-                    score, confianza, hipotesis_activadas, razon, timestamp
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    score, confianza, hipotesis_activadas, razon, timestamp, recomendaciones_json
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     usuario_id,
-                    resultado.get("producto_principal"),
-                    resultado.get("producto_alternativa"),
-                    resultado.get("categoria"),
-                    resultado.get("score"),
-                    resultado.get("confianza"),
+                    principal.get("producto_id"),
+                    alternativa.get("producto_id"),
+                    principal.get("categoria"),
+                    principal.get("score"),
+                    principal.get("confianza"),
                     json.dumps(resultado.get("hipotesis_activadas", []), ensure_ascii=False),
-                    resultado.get("razon"),
+                    principal.get("razon"),
                     timestamp,
+                    json.dumps(recomendaciones, ensure_ascii=False),
                 ),
             )
             conexion.commit()
