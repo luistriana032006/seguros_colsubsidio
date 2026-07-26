@@ -74,6 +74,11 @@ MUNICIPIOS_PERIFERICOS = {"Soacha", "Mosquera", "Zipaquirá", "Funza"}
 UMBRAL_ALTA = 0.7
 UMBRAL_MEDIA = 0.4
 
+# --- CAPA 3: ranking del universo completo (ver _evaluar_universo) ---
+BONUS_NECESIDAD_DECLARADA = 0.30  # se suma al score de los productos de la necesidad que pidió el usuario
+FLOOR_CANDIDATO = 0.10  # candidato real por debajo de esto no compite -- se reemplaza por el respaldo de su categoría
+SCORE_RESPALDO_INYECTADO = 0.15  # score fijo del respaldo cuando una necesidad no aporta ningún candidato real
+
 # --- CAPA 1: elegibilidad dura (dato real de Chubb, filtro antes de calcular propensión) ---
 ELEGIBILIDAD_DURA = {
     "AP-CHUBB-01": (18, 65),
@@ -251,19 +256,78 @@ def _campos_verificados(producto_id):
     return sum(1 for columna in COLUMNAS_ESTADO if fila[columna] == "verificado")
 
 
-def _ordenar_candidatos(scores):
-    """CAPA 3: todos los candidatos con score > 0, de mayor a menor, desempate por campos verificados."""
-    candidatos = [(pid, s) for pid, s in scores.items() if s > 0]
-    candidatos.sort(key=lambda item: (-item[1], -_campos_verificados(item[0])))
-    return candidatos
+def _evaluar_universo(perfil, necesidad_declarada):
+    """CAPA 2 + CAPA 3, pasos 1-3: evalúa las 6 necesidades, no solo la declarada.
+
+    Para cada necesidad: corre sus hipótesis, suma BONUS_NECESIDAD_DECLARADA si es
+    la que pidió el usuario, descarta candidatos reales por debajo de FLOOR_CANDIDATO,
+    y si a una necesidad no le queda ningún candidato real, inyecta su propio producto
+    de PRODUCTOS_RESPALDO con SCORE_RESPALDO_INYECTADO (así toda necesidad aporta algo
+    al universo, y "quedan menos de 3 candidatos reales" deja de ser un caso posible).
+    Devuelve el pool ya deduplicado (si un producto sale de más de una necesidad, se
+    queda con el de mayor score) y las hipótesis que activó específicamente la
+    necesidad declarada (para el campo hipotesis_activadas de la salida).
+    """
+    pool = {}
+    hipotesis_declarada = []
+
+    for necesidad_n in NECESIDADES_VALIDAS:
+        scores_n, hipotesis_n, claves_por_candidato_n = _evaluar_necesidad(necesidad_n, perfil)
+        if necesidad_n == necesidad_declarada:
+            hipotesis_declarada = hipotesis_n
+
+        bonus = BONUS_NECESIDAD_DECLARADA if necesidad_n == necesidad_declarada else 0.0
+
+        candidatos_validos = []
+        for producto_id, score in scores_n.items():
+            score_final = score + bonus
+            if score_final < FLOOR_CANDIDATO:
+                continue
+            candidatos_validos.append((producto_id, score_final, claves_por_candidato_n.get(producto_id, [])))
+
+        if not candidatos_validos:
+            respaldo_id = PRODUCTOS_RESPALDO[necesidad_n]
+            candidatos_validos.append((respaldo_id, SCORE_RESPALDO_INYECTADO + bonus, []))
+
+        for producto_id, score_final, claves in candidatos_validos:
+            if producto_id in PRODUCTOS_EXCLUIDOS_SIEMPRE:
+                continue
+            existente = pool.get(producto_id)
+            if existente is None or score_final > existente["score"]:
+                pool[producto_id] = {
+                    "score": score_final,
+                    "necesidad_origen": necesidad_n,
+                    "claves": claves,
+                }
+
+    return pool, hipotesis_declarada
+
+
+def _rankear_pool(pool):
+    """CAPA 3, paso 3: todo el universo ordenado de mayor a menor, desempate por campos verificados."""
+    items = list(pool.items())
+    items.sort(key=lambda kv: (-kv[1]["score"], -_campos_verificados(kv[0])))
+    return items
+
+
+def _razon_recomendacion(info, necesidad_declarada, score_reportado):
+    """CAPA 3, paso 5: razón trazable a las hipótesis reales que dispararon el candidato."""
+    es_declarada = info["necesidad_origen"] == necesidad_declarada
+    etiqueta = "Recomendación principal" if es_declarada else "Complemento recomendado"
+    if info["claves"]:
+        detalle = ", ".join(info["claves"])
+    else:
+        detalle = (
+            f"producto de respaldo de la categoría '{info['necesidad_origen']}', "
+            "sin hipótesis específica con señal suficiente en el perfil"
+        )
+    return f"{etiqueta} ({info['necesidad_origen']}): {detalle}. Score: {score_reportado:.2f}."
 
 
 def _completar_con_respaldo(necesidad, ids_usados, cuantos_faltan):
-    """Rellena hasta 3 recomendaciones con productos de respaldo de OTRAS categorías.
-
-    Nunca repite un producto_id ya usado, nunca la propia necesidad, y como
-    PRODUCTOS_RESPALDO nunca contiene un producto de PRODUCTOS_EXCLUIDOS_SIEMPRE,
-    los excluidos quedan fuera de forma automática.
+    """Rellena con productos de respaldo de OTRAS categorías -- solo lo usa el camino
+    de excepción (_recomendaciones_respaldo); el camino normal ya no lo necesita
+    porque _evaluar_universo garantiza que el pool nunca se queda corto.
     """
     fillers = []
     for otra_necesidad, producto_id in PRODUCTOS_RESPALDO.items():
@@ -276,7 +340,7 @@ def _completar_con_respaldo(necesidad, ids_usados, cuantos_faltan):
     return fillers
 
 
-def _armar_recomendacion(posicion, producto_id, score, razon):
+def _armar_recomendacion(posicion, producto_id, score, razon, es_necesidad_declarada):
     return {
         "posicion": posicion,
         "producto_id": producto_id,
@@ -285,6 +349,7 @@ def _armar_recomendacion(posicion, producto_id, score, razon):
         "score": round(min(max(score, 0.0), 1.0), 2),
         "confianza": _confianza(score),
         "razon": razon,
+        "es_necesidad_declarada": es_necesidad_declarada,
     }
 
 
@@ -418,14 +483,14 @@ def _validar_perfil(perfil):
 
 
 def _recomendaciones_respaldo(necesidad, motivo):
-    """3 recomendaciones de respaldo (sin score real) -- usado cuando algo falla o no hay señal."""
+    """3 recomendaciones de respaldo (sin score real) -- usado cuando algo falla internamente."""
     principal_necesidad = necesidad if necesidad in PRODUCTOS_RESPALDO else "familia"
     ids_usados = set()
     respaldos = [PRODUCTOS_RESPALDO[principal_necesidad]]
     ids_usados.add(respaldos[0])
     respaldos += _completar_con_respaldo(principal_necesidad, ids_usados, 2)
     return [
-        _armar_recomendacion(posicion, producto_id, 0.0, motivo)
+        _armar_recomendacion(posicion, producto_id, 0.0, motivo, producto_id == respaldos[0])
         for posicion, producto_id in enumerate(respaldos, start=1)
     ]
 
@@ -441,32 +506,23 @@ def recomendar(perfil: dict) -> dict:
         if necesidad not in PRODUCTOS_RESPALDO:
             raise ValueError(f"necesidad no reconocida: {necesidad!r}")
 
-        scores, hipotesis_activadas, claves_por_candidato = _evaluar_necesidad(necesidad, perfil)
-        candidatos_ordenados = _ordenar_candidatos(scores)
+        pool, hipotesis_activadas = _evaluar_universo(perfil, necesidad)
+        ranking = _rankear_pool(pool)
+
+        if len(ranking) < 3:
+            # No debería pasar nunca: _evaluar_universo garantiza al menos un producto
+            # por cada una de las 6 necesidades (real o respaldo inyectado), y los 6
+            # respaldos de PRODUCTOS_RESPALDO son todos IDs distintos entre sí.
+            raise RuntimeError(f"el universo de candidatos quedó con solo {len(ranking)} producto(s)")
 
         recomendaciones = []
-        ids_usados = set()
-        for producto_id, score in candidatos_ordenados[:3]:
-            ids_usados.add(producto_id)
-            claves = claves_por_candidato.get(producto_id, [])
-            razon = (
-                f"{', '.join(claves)}. Score total: {round(min(max(score, 0.0), 1.0), 2):.2f}."
-                if claves
-                else f"Score acumulado de la categoría '{necesidad}'. Score total: {round(min(max(score, 0.0), 1.0), 2):.2f}."
+        for posicion, (producto_id, info) in enumerate(ranking[:3], start=1):
+            score_reportado = round(min(max(info["score"], 0.0), 1.0), 2)
+            es_declarada = info["necesidad_origen"] == necesidad
+            razon = _razon_recomendacion(info, necesidad, score_reportado)
+            recomendaciones.append(
+                _armar_recomendacion(posicion, producto_id, info["score"], razon, es_declarada)
             )
-            recomendaciones.append(_armar_recomendacion(0, producto_id, score, razon))
-
-        faltan = 3 - len(recomendaciones)
-        if faltan > 0:
-            razon_respaldo = (
-                f"Producto de respaldo general -- no hay señal suficiente en tu perfil "
-                f"para la necesidad '{necesidad}' como para llenar las 3 posiciones."
-            )
-            for producto_id in _completar_con_respaldo(necesidad, ids_usados, faltan):
-                recomendaciones.append(_armar_recomendacion(0, producto_id, 0.0, razon_respaldo))
-
-        for posicion, item in enumerate(recomendaciones, start=1):
-            item["posicion"] = posicion
 
         return {
             "recomendaciones": recomendaciones,

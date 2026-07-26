@@ -1,23 +1,47 @@
-"""Calcula el peso real de cada hipótesis a partir de data/sintetico/datos_sinteticos.csv
-y lo guarda en data/modelos/pesos_hipotesis.json.
+"""Calcula el peso real de cada hipótesis combinando datos sintéticos y datos
+reales, y lo guarda en data/modelos/pesos_hipotesis.json.
 
-peso = (filas que cumplen la condición Y compraron ese producto) / (total de filas que
-compraron ese producto). Cuando una hipótesis tiene varios productos candidatos (p. ej.
-SALUD-01/ASMED-01 para drogueria_activa), "ese producto" se toma como la unión de todos
--- el denominador cuenta filas cuyo producto_comprado esté en esa lista, no un solo ID.
+Dos fuentes:
+- data/sintetico/datos_sinteticos.csv: los 5.000 perfiles base.
+- data/motor.db (usuarios JOIN recomendaciones): perfiles reales que ya pasaron
+  por motor.recomendar() + motor.registrar() -- vía server.py, mcp_server.py o
+  app.py. Cuentan 3x en la fórmula (FACTOR_PESO_REAL) porque son comportamiento
+  real, no generado.
+
+peso = (soporte_sintetico + soporte_real * 3) / (total_sintetico + total_real * 3)
+
+soporte/total_producto en el JSON de salida quedan como conteos reales (sin el
+factor 3) -- ese factor solo entra en el cálculo del peso, no se mezcla con
+"cuántos registros hay" para no inflar un número que se lee como conteo literal.
+
+Antes de calcular nada, si ya existe un pesos_hipotesis.json de una corrida
+anterior, se copia a pesos_hipotesis_anterior.json (para que dashboard_pesos.py
+pueda comparar antes/después).
 """
 import json
+import shutil
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
 
 RAIZ = Path(__file__).resolve().parent.parent
-RUTA_DATOS = RAIZ / "data" / "sintetico" / "datos_sinteticos.csv"
+RUTA_DATOS_SINTETICOS = RAIZ / "data" / "sintetico" / "datos_sinteticos.csv"
+RUTA_DB = RAIZ / "data" / "motor.db"
 RUTA_SALIDA = RAIZ / "data" / "modelos" / "pesos_hipotesis.json"
+RUTA_SALIDA_ANTERIOR = RAIZ / "data" / "modelos" / "pesos_hipotesis_anterior.json"
 
 FLOOR_MINIMO = 0.05
 PESO_SIN_DATOS = 0.01
+FACTOR_PESO_REAL = 3
+
+COLUMNAS_PERFIL_REAL = [
+    "edad", "ciudad", "rango_salarial", "tipo_vivienda", "tiene_dependientes",
+    "num_dependientes", "estado_civil", "usa_drogueria", "usa_hoteles",
+    "usa_agencias", "tiene_mascota", "tipo_mascota", "tipo_vehiculo",
+]
+COLUMNAS_BOOLEANAS = ["tiene_dependientes", "usa_drogueria", "usa_hoteles", "usa_agencias", "tiene_mascota"]
 
 HIPOTESIS_A_CALCULAR = {
     "salud": {
@@ -111,35 +135,99 @@ HIPOTESIS_A_CALCULAR = {
 }
 
 
-def _calcular_peso(df, condicion, productos, ajuste=None):
-    mascara_producto = df["producto_comprado"].isin(productos)
-    total_producto = int(mascara_producto.sum())
+def _respaldar_pesos_anteriores():
+    """CAMBIO 1: si ya hay un pesos_hipotesis.json, lo copia antes de sobreescribirlo."""
+    if RUTA_SALIDA.exists():
+        shutil.copy2(RUTA_SALIDA, RUTA_SALIDA_ANTERIOR)
+        return True
+    return False
 
-    mascara_condicion = df.eval(condicion, engine="python")
-    soporte = int((mascara_condicion & mascara_producto).sum())
 
-    if total_producto == 0:
+def _cargar_datos_reales():
+    """CAMBIO 2: usuarios JOIN recomendaciones con producto_principal no nulo,
+    convertido al mismo formato de columnas que el CSV sintético. DataFrame
+    vacío (no excepción) si la DB, las tablas, o filas todavía no existen."""
+    columnas_vacias = COLUMNAS_PERFIL_REAL + ["producto_comprado"]
+    if not RUTA_DB.exists():
+        return pd.DataFrame(columns=columnas_vacias)
+
+    conexion = sqlite3.connect(RUTA_DB)
+    try:
+        tablas = {
+            fila[0] for fila in conexion.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            ).fetchall()
+        }
+        if not {"usuarios", "recomendaciones"}.issubset(tablas):
+            return pd.DataFrame(columns=columnas_vacias)
+
+        df_real = pd.read_sql_query(
+            """
+            SELECT u.edad, u.ciudad, u.rango_salarial, u.tipo_vivienda, u.tiene_dependientes,
+                   u.num_dependientes, u.estado_civil, u.usa_drogueria, u.usa_hoteles,
+                   u.usa_agencias, u.tiene_mascota, u.tipo_mascota, u.tipo_vehiculo,
+                   r.producto_principal AS producto_comprado
+            FROM usuarios u
+            JOIN recomendaciones r ON r.usuario_id = u.id
+            WHERE r.producto_principal IS NOT NULL
+            """,
+            conexion,
+        )
+    finally:
+        conexion.close()
+
+    for columna in COLUMNAS_BOOLEANAS:
+        df_real[columna] = df_real[columna].astype(bool)
+
+    return df_real
+
+
+def _calcular_peso(df_sintetico, df_real, condicion, productos, ajuste=None):
+    """CAMBIO 3: combina soporte/total de ambas fuentes, con los reales pesando FACTOR_PESO_REAL."""
+    mascara_producto_sint = df_sintetico["producto_comprado"].isin(productos)
+    total_sintetico = int(mascara_producto_sint.sum())
+    mascara_condicion_sint = df_sintetico.eval(condicion, engine="python")
+    soporte_sintetico = int((mascara_condicion_sint & mascara_producto_sint).sum())
+
+    if len(df_real) > 0:
+        mascara_producto_real = df_real["producto_comprado"].isin(productos)
+        total_real = int(mascara_producto_real.sum())
+        mascara_condicion_real = df_real.eval(condicion, engine="python")
+        soporte_real = int((mascara_condicion_real & mascara_producto_real).sum())
+    else:
+        total_real = 0
+        soporte_real = 0
+
+    soporte_ponderado = soporte_sintetico + soporte_real * FACTOR_PESO_REAL
+    total_ponderado = total_sintetico + total_real * FACTOR_PESO_REAL
+
+    if total_ponderado == 0:
         peso = PESO_SIN_DATOS
     else:
-        peso = soporte / total_producto
+        peso = soporte_ponderado / total_ponderado
         if peso < FLOOR_MINIMO:
             peso = FLOOR_MINIMO
 
     if ajuste is not None:
         peso += ajuste
 
-    return round(peso, 4), soporte, total_producto
+    soporte_total = soporte_sintetico + soporte_real
+    total_producto = total_sintetico + total_real
+    return round(peso, 4), soporte_total, total_producto
 
 
 def entrenar():
-    df = pd.read_csv(RUTA_DATOS)
+    hubo_anterior = _respaldar_pesos_anteriores()
+
+    df_sintetico = pd.read_csv(RUTA_DATOS_SINTETICOS)
+    df_real = _cargar_datos_reales()
 
     pesos = {}
     for necesidad, hipotesis_necesidad in HIPOTESIS_A_CALCULAR.items():
         pesos[necesidad] = {}
         for clave, definicion in hipotesis_necesidad.items():
             peso, soporte, total_producto = _calcular_peso(
-                df, definicion["condicion"], definicion["productos"], definicion.get("ajuste")
+                df_sintetico, df_real, definicion["condicion"], definicion["productos"], definicion.get("ajuste")
             )
             pesos[necesidad][clave] = {
                 "peso": peso,
@@ -148,10 +236,16 @@ def entrenar():
                 "total_producto": total_producto,
             }
 
+    registros_sinteticos = len(df_sintetico)
+    registros_reales = len(df_real)
+
     salida = {
-        "version": "v1",
+        "version": "v2",
         "fecha_entrenamiento": datetime.now(timezone.utc).isoformat(),
-        "total_registros_entrenamiento": len(df),
+        "total_registros_entrenamiento": registros_sinteticos + registros_reales,
+        "registros_sinteticos": registros_sinteticos,
+        "registros_reales": registros_reales,
+        "factor_peso_real": FACTOR_PESO_REAL,
         "pesos": pesos,
     }
 
@@ -159,11 +253,11 @@ def entrenar():
     with open(RUTA_SALIDA, "w", encoding="utf-8") as archivo:
         json.dump(salida, archivo, ensure_ascii=False, indent=2)
 
-    return salida
+    return salida, hubo_anterior
 
 
 if __name__ == "__main__":
-    resultado = entrenar()
+    resultado, hubo_anterior = entrenar()
 
     filas = []
     for necesidad, hipotesis_necesidad in resultado["pesos"].items():
@@ -171,9 +265,21 @@ if __name__ == "__main__":
             filas.append((necesidad, clave, info["peso"], info["soporte"], info["total_producto"]))
     filas.sort(key=lambda f: f[2], reverse=True)
 
-    print(f"Registros de entrenamiento: {resultado['total_registros_entrenamiento']}")
+    print(f"Modelo anterior respaldado en pesos_hipotesis_anterior.json: {'sí' if hubo_anterior else 'no había uno todavía'}")
     print(f"Guardado en: {RUTA_SALIDA}")
     print()
+
+    registros_sinteticos = resultado["registros_sinteticos"]
+    registros_reales = resultado["registros_reales"]
+    print(f"Registros sintéticos usados: {registros_sinteticos}")
+    print(f"Registros reales usados: {registros_reales}")
+    print(f"Total combinado: {registros_sinteticos + registros_reales}")
+    if registros_reales == 0:
+        print("Aún no hay datos reales — entrenamiento solo con datos sintéticos")
+    else:
+        print(f"Entrenamiento enriquecido con {registros_reales} registros reales")
+    print()
+
     print("Top 5 pesos más altos:")
     for necesidad, clave, peso, soporte, total_producto in filas[:5]:
         print(f"  {necesidad}.{clave}: peso={peso} (soporte={soporte}/{total_producto})")
