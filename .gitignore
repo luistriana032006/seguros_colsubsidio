@@ -7,6 +7,7 @@ data/processed/*.csv
 
 # Log de auditoría (SQLite): crece con cada uso local, no es código fuente.
 seguros.db
+data/motor.db
 
 # Python
 __pycache__/
@@ -23,3 +24,5 @@ venv/
 
 # Configuración local de Claude Code (específica de cada máquina/usuario)
 .claude/
+
+/apuntes/deprecados

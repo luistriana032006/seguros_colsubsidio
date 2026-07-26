@@ -1,0 +1,164 @@
+{
+  "version": "v1",
+  "fecha_entrenamiento": "2026-07-25T22:20:58.330618+00:00",
+  "total_registros_entrenamiento": 5000,
+  "pesos": {
+    "salud": {
+      "drogueria_activa": {
+        "peso": 0.892,
+        "productos": [
+          "SALUD-01",
+          "ASMED-01"
+        ],
+        "soporte": 347,
+        "total_producto": 389
+      },
+      "tiene_dependientes_salud": {
+        "peso": 0.4486,
+        "productos": [
+          "ASMED-01"
+        ],
+        "soporte": 83,
+        "total_producto": 185
+      }
+    },
+    "familia": {
+      "ahorro_mediano_plazo": {
+        "peso": 0.8971,
+        "productos": [
+          "VIDAAH-01"
+        ],
+        "soporte": 305,
+        "total_producto": 340
+      },
+      "salario_bajo_familia": {
+        "peso": 0.9143,
+        "productos": [
+          "APEXEQ-PAL-01"
+        ],
+        "soporte": 320,
+        "total_producto": 350
+      },
+      "mayor_55": {
+        "peso": 0.9362,
+        "productos": [
+          "EXEQ-01"
+        ],
+        "soporte": 308,
+        "total_producto": 329
+      },
+      "salario_bajo_medio_familia": {
+        "peso": 0.9594,
+        "productos": [
+          "ASMULT-01"
+        ],
+        "soporte": 331,
+        "total_producto": 345
+      },
+      "tiene_dependientes_familia": {
+        "peso": 0.4891,
+        "productos": [
+          "VIDA-01"
+        ],
+        "soporte": 112,
+        "total_producto": 229
+      }
+    },
+    "hogar": {
+      "salario_alto_hogar": {
+        "peso": 0.7954,
+        "productos": [
+          "HOGAR-01"
+        ],
+        "soporte": 447,
+        "total_producto": 562
+      },
+      "salario_bajo_medio_hogar": {
+        "peso": 0.9516,
+        "productos": [
+          "ARRENDA-01"
+        ],
+        "soporte": 334,
+        "total_producto": 351
+      },
+      "vivienda_propia": {
+        "peso": 0.3292,
+        "productos": [
+          "HOGAR-01"
+        ],
+        "soporte": 185,
+        "total_producto": 562
+      }
+    },
+    "movilidad": {
+      "periferia_salario_bajo": {
+        "peso": 0.9185,
+        "productos": [
+          "MOTO-01"
+        ],
+        "soporte": 327,
+        "total_producto": 356
+      },
+      "edad_joven_bici": {
+        "peso": 0.6823,
+        "productos": [
+          "BICI-01"
+        ],
+        "soporte": 363,
+        "total_producto": 532
+      },
+      "vehiculo_moto": {
+        "peso": 0.25,
+        "productos": [
+          "MOTO-01"
+        ],
+        "soporte": 89,
+        "total_producto": 356
+      },
+      "vehiculo_bici": {
+        "peso": 0.0883,
+        "productos": [
+          "BICI-01"
+        ],
+        "soporte": 47,
+        "total_producto": 532
+      }
+    },
+    "mascotas": {
+      "tiene_mascota": {
+        "peso": 0.7634,
+        "productos": [
+          "PET-SEG-01"
+        ],
+        "soporte": 284,
+        "total_producto": 372
+      },
+      "salario_bajo_medio_mascota": {
+        "peso": 0.4934,
+        "productos": [
+          "PET-PREP-01"
+        ],
+        "soporte": 75,
+        "total_producto": 152
+      },
+      "bucaramanga_mascota": {
+        "peso": -0.1435,
+        "productos": [
+          "PET-SEG-01"
+        ],
+        "soporte": 21,
+        "total_producto": 372
+      }
+    },
+    "credito": {
+      "salario_medio_bajo_credito": {
+        "peso": 0.7989,
+        "productos": [
+          "DEUDOR-VIDA-01"
+        ],
+        "soporte": 433,
+        "total_producto": 542
+      }
+    }
+  }
+}
