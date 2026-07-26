@@ -305,4 +305,126 @@ Arranque con stdin vacío: `exit code 0`, sin traceback (confirma que no hay err
 
 ### Qué falta / qué verificar en la próxima sesión
 - Nada pendiente de esta sesión.
-- Ningún cambio de las Sesiones 10 y 11 está commiteado todavía (sigue todo en el working tree, incluye `mcp_server.py` sin trackear).
+- Ningún cambio de las Sesiones 10 y 11 está commiteado todavía (sigue todo en el working tree, incluye `mcp_server.py` sin trackear). **Resuelto**: subido junto con el Makefile en el commit `3f2c09e`.
+
+---
+
+## Sesión 12 — 2026-07-25 — Fix de `app.py`: no llamaba a `registrar()`
+
+### Qué se pidió
+El usuario reportó que el dashboard de métricas no subía el total de recomendaciones después de usar la demo manual, pese a que el motor sí generaba una recomendación nueva en pantalla.
+
+### Qué se tocó y por qué
+- Diagnóstico antes de tocar código: se confirmó en `data/motor.db` que el total seguía exactamente en el mismo número que antes del "nuevo flujo" del usuario — no era un bug de refresco del dashboard, el dashboard reportaba la verdad.
+- `app.py`: el botón "Recomendar" llamaba a `motor.recomendar()` pero nunca a `motor.registrar()` — a diferencia de `server.py`, `mcp_server.py` y el bloque `__main__` de `motor.py`, que sí lo hacían desde que `registrar()` existe ([[Sesión 5]]). Se agregó la llamada faltante con `canal="prueba"`.
+
+### Verificación
+Se probó el mismo flujo exacto del botón de forma aislada (`recomendar()` + `registrar()`), confirmando que el total en `data/motor.db` subía de 21 a 22.
+
+Commiteado y subido a GitHub: `92a3629`.
+
+### Qué falta / qué verificar en la próxima sesión
+- Nada pendiente de esta sesión.
+
+---
+
+## Sesión 13 — 2026-07-25 — `motor.py`: ranking universal de las 6 necesidades (CAPA 2/3 rediseñadas)
+
+### Qué se pidió
+El mecanismo de respaldo a score 0 para completar las 3 recomendaciones (de [[Sesión 10]]) se consideró "no defendible". Reemplazo completo: evaluar las 6 necesidades contra el perfil (no solo la declarada), sumarle un bonus fijo de +0.30 a los productos de la necesidad declarada, aplicar un floor de 0.10 (por debajo de eso el candidato no compite, se reemplaza por el respaldo de su categoría a 0.15), juntar todo en un solo universo rankeado, deduplicar por producto (quedarse con el score mayor si aparece en más de una necesidad), y tomar los 3 mejores. Cada recomendación necesita razón trazable y un campo `es_necesidad_declarada`.
+
+### Qué se tocó y por qué
+- `motor.py`: `_ordenar_candidatos()` (rankeaba solo dentro de la necesidad declarada) se reemplazó por `_evaluar_universo()` (corre `_evaluar_necesidad()` para las 6 necesidades, aplica bonus/floor/inyección de respaldo por necesidad, arma un pool deduplicado) + `_rankear_pool()` (ordena todo el universo) + `_razon_recomendacion()` (arma la razón citando las claves reales que dispararon el candidato, con etiqueta "Recomendación principal" o "Complemento recomendado" según si es la necesidad declarada). `_armar_recomendacion()` ahora incluye `es_necesidad_declarada`. `recomendar()` reescrito para usar el pool global en vez de la lista de un solo `_evaluar_necesidad()`.
+- Constantes nuevas: `BONUS_NECESIDAD_DECLARADA = 0.30`, `FLOOR_CANDIDATO = 0.10`, `SCORE_RESPALDO_INYECTADO = 0.15`. Se eliminó `UMBRAL_RESPALDO` (ya sin uso, la lógica que lo usaba desapareció) y se ajustó `_completar_con_respaldo()` para que solo la use el camino de excepción (`_recomendaciones_respaldo`) — el camino normal ya no puede quedarse corto porque `_evaluar_universo()` garantiza que las 6 necesidades siempre aportan al menos un producto (real o respaldo inyectado).
+
+### Decisiones propias (no explícitas en el pedido original)
+- El pedido dice que el bonus "garantiza que la necesidad declarada domine la posición 1" — matemáticamente eso no está garantizado en el 100% de los casos (una necesidad no declarada puede acumular varias hipótesis reales y superar a la declarada con una sola hipótesis + bonus). Se implementó el mecanismo tal cual se pidió (bonus fijo, ranking global) sin forzar artificialmente que la posición 1 sea siempre la declarada — eso hubiera sido fabricar el resultado, contrario al espíritu de "no es defendible" que motivó el cambio. Se verificó empíricamente que en los 3 casos de prueba sí se cumple.
+- El score mostrado (`score`) se sigue capando a [0, 1] para el contrato de salida, pero el **ranking interno usa el valor sin capar** — así dos candidatos que después de capar se ven ambos en "1.00" (ej. Caso 1: ASMED-01 y SALUD-01, ambos 1.192 crudo) igual se desempatan correctamente por campos verificados, no por casualidad de redondeo.
+- No se implementaron los "scores mínimos por posición" (`≥0.50`/`≥0.15`/`≥0.10`) como un segundo floor forzado por posición — se interpretaron como el resultado esperado dado el mecanismo (bonus + floor de candidatos), no como una regla algorítmica adicional a mano. Se verificó que se cumplen en los 3 casos de prueba de todas formas.
+
+### Verificación
+Los 3 casos de prueba: los 9 scores (3 posiciones × 3 casos) son todos > 0, la posición 1 siempre es la necesidad declarada (`es_necesidad_declarada: true`), y se confirmó con un dump completo del universo (no solo el top-3) que el mecanismo de respaldo inyectado a 0.15 sí se disparó para varias necesidades sin señal real en los Casos 2 y 3, pero ninguna de esas terminó en el top-3 final.
+
+### Qué falta / qué verificar en la próxima sesión
+- Ningún cambio de esta sesión está commiteado todavía.
+- `apuntes/PARA_NICOLAS.md` no se actualizó con el campo `es_necesidad_declarada` nuevo en el ejemplo de respuesta — quedó desactualizado.
+
+---
+
+## Sesión 14 — 2026-07-25 — Unificación de `app.py` + `dashboard.py` vía `metricas.py`
+
+### Qué se pidió
+Traer las métricas del dashboard a la misma página donde se prueba el motor manualmente, sin romper que las dos interfaces sigan funcionando por separado.
+
+### Qué se tocó y por qué
+- `metricas.py` (nuevo): toda la lógica de las 7 secciones de `dashboard.py` (carga de datos cacheada, auto-refresco, gráficos) extraída a una función `render_metricas()` reutilizable. Usa `return` en vez de `st.stop()` en el caso de "sin datos", justamente para poder vivir dentro de una pestaña de otra página sin cortar el resto del script si se llama desde ahí.
+- `dashboard.py`: quedó reducido a `set_page_config` + título + `render_metricas()` — sigue siendo una página standalone completa.
+- `app.py`: se agregó `st.tabs(["🧪 Probar el motor", "📊 Métricas"])`, moviendo el formulario existente a la primera pestaña y llamando a `render_metricas()` en la segunda. Se agregó `layout="wide"` (antes no lo tenía) porque los gráficos se ven apretados en el layout centrado por defecto.
+
+### Verificación
+Las dos páginas (`app.py` en 8501, `dashboard.py` en 8502) levantadas en headless por separado, ambas HTTP 200 sin errores en el log.
+
+### Qué falta / qué verificar en la próxima sesión
+- Ningún cambio de esta sesión está commiteado todavía.
+
+---
+
+## Sesión 15 — 2026-07-25 — `dashboard_pesos.py`
+
+### Qué se pidió
+Dashboard de solo lectura sobre `data/modelos/pesos_hipotesis.json`: encabezado con fecha de entrenamiento y totales, pestañas por necesidad con tabla de pesos (barra de progreso + color por umbral), ranking global top 10, hipótesis débiles (peso < 0.3 o soporte < 10), y comparación contra `data/modelos/pesos_hipotesis_anterior.json` si existe. Auto-refresco cada 30s.
+
+### Qué se tocó y por qué
+- `dashboard_pesos.py` (nuevo): las 5 secciones pedidas. Para la barra de progreso + color simultáneos en la misma tabla (`st.dataframe` no deja combinar bien `column_config.ProgressColumn` con `Styler` en la misma columna), se separaron en dos columnas: "Peso actual" con `ProgressColumn`, y "Nivel" con un emoji de color (🟢/🟡/🔴) como texto plano — más robusto que pelear con la combinación Styler+ProgressColumn.
+- Para la Sección 5, se usó `pandas.Styler.map` (no `.applymap`, que ya no existe en pandas 3.0.3, la versión instalada) para colorear la columna "Cambio" según si subió o bajó.
+
+### Verificación
+Corrida real contra `pesos_hipotesis.json`: HTTP 200, log del servidor sin ninguna excepción. Verificado por fuera de Streamlit que la cuenta de "hipótesis débiles" coincide con lo que debería mostrar la Sección 4 (3 hipótesis: `movilidad.vehiculo_moto`, `movilidad.vehiculo_bici`, `mascotas.bucaramanga_mascota`). Confirmado que `pesos_hipotesis_anterior.json` no existía todavía, así que la Sección 5 mostró el mensaje de "sin entrenamiento anterior" — se señaló en ese momento que nada en el repo generaba ese archivo automáticamente.
+Se agregó `make pesos` al Makefile (puerto 8503), siguiendo el mismo patrón que `server`/`dashboard`/`app`/`mcp`.
+
+### Qué falta / qué verificar en la próxima sesión
+- `pesos_hipotesis_anterior.json` seguía sin generarse automáticamente en ningún punto del repo — pendiente hasta que algo (el reentrenamiento) lo cree. **Resuelto en [[Sesión 16]]... no, en el pedido que sigue a esta bitácora** (CAMBIO 1 de "soporta reentrenamiento").
+- Ningún cambio de esta sesión estaba commiteado al cerrarla.
+
+---
+
+## Sesión 16 — 2026-07-25 — Unificación final: `pesos.py` + 3 pestañas en `app.py` + `make run` sin `dashboard.py`
+
+### Qué se pidió
+El usuario reportó que `make run` le seguía abriendo `localhost:8502` (la pestaña de `dashboard.py`) además de la app principal — molesto porque cada `streamlit run` abre su propia pestaña de navegador sola. Pidió que ese puerto dejara de abrirse, y que los 3 "dashboards" (probar el motor, métricas, pesos) vivieran en una sola página con un solo comando.
+
+### Qué se tocó y por qué
+- `pesos.py` (nuevo): mismo patrón que `metricas.py` — la lógica de `dashboard_pesos.py` ([[Sesión 15]]) extraída a `render_pesos()`, con `return` en vez de `st.stop()`.
+- `dashboard_pesos.py`: reducido a wrapper delgado (`set_page_config` + título + `render_pesos()`), igual que `dashboard.py`.
+- `app.py`: tercera pestaña `"⚖️ Pesos"` agregada, llamando a `render_pesos()`. Los widgets de `pesos.py` (`st_autorefresh`, botón "Refrescar") llevan `key` explícito (`pesos_autorefresh`, `pesos_refrescar`) para no chocar con los de `metricas.py` al convivir las tres pestañas en la misma página.
+- `Makefile`: la receta `run` dejó de lanzar `dashboard.py` en background — ahora solo levanta `server.py` (8000) y `app.py` (8501, con las 3 pestañas). `make dashboard` y `make pesos` se mantienen como comandos sueltos para quien quiera una sola vista sin el resto.
+
+### Decisiones propias (no explícitas en el pedido original)
+- Se optó por mantener `dashboard.py` y `dashboard_pesos.py` como wrappers standalone en vez de borrarlos — el pedido no dijo explícitamente "que sigan funcionando aparte" esta vez, pero tampoco pidió eliminarlos, y mantenerlos no cuesta nada (la lógica ya vive en `metricas.py`/`pesos.py`) mientras sí resuelve el problema real (que `make run` no los dispare solos).
+
+### Verificación
+Se detectó y bajó una instancia vieja de `make run` que seguía corriendo con el Makefile anterior (abría 8502) antes de poder probar el fix real. Con el Makefile nuevo: `make run` corrido de verdad, solo puertos 8000 y 8501 quedaron escuchando (confirmado con `ss -ltnp`, sin 8502 ni 8503), ambos HTTP 200, log sin tracebacks. Aparte, se confirmó que `dashboard.py` y `dashboard_pesos.py` corridos sueltos (headless, puertos de prueba) siguen funcionando sin errores.
+
+### Qué falta / qué verificar en la próxima sesión
+- Ningún cambio de las Sesiones 13 a 16 está commiteado todavía.
+
+---
+
+## Estado actual del proyecto — 2026-07-25 (antes de la tarea de reentrenamiento con datos reales)
+
+**Lo que tenemos, funcionando y verificado:**
+- Motor de reglas con pesos entrenados (`motor.py`): elegibilidad dura por edad, evaluación de las 6 necesidades contra el perfil (no solo la declarada, desde [[Sesión 13]]), bonus a la necesidad declarada, floor con respaldo inyectado, ranking global deduplicado, validación de entrada completa, `registrar()` en SQLite.
+- 4 formas de consumir el motor, todas con `registrar()` enganchado: `import motor` directo, `app.py` (Streamlit, ahora con 3 pestañas: Probar el motor / Métricas / Pesos), `server.py` (API FastAPI HTTP), `mcp_server.py` (herramienta MCP por stdio).
+- Generación de datos sintéticos (`scripts/generar_datos_sinteticos.py`, 5.000 perfiles) y entrenamiento de pesos (`scripts/entrenar_motor.py`) — **hoy entrena solo con el CSV sintético**, nunca toca `data/motor.db`. Es exactamente el hueco que cierra la tarea que sigue.
+- Persistencia en `data/motor.db` (tablas `catalogo`/`usuarios`/`recomendaciones`), excluida de git (se regenera con `scripts/crear_db.py` / `make db`).
+- Tres interfaces Streamlit unificadas en una sola página (`app.py`) sin duplicar lógica (`metricas.py`, `pesos.py` compartidos con las versiones standalone `dashboard.py`/`dashboard_pesos.py`).
+- `Makefile` como único punto de entrada (`make help` lista todo); `make run` levanta solo lo esencial (API + app unificada) sin abrir pestañas de más.
+- Documentación: `README.md` actualizado con el estado real, `apuntes/contrato_campos_motor.md` (contrato de campos), `apuntes/PARA_NICOLAS.md` (integración HTTP + MCP), `apuntes/Hipotesis_Generales_Seguros.md` (hipótesis fuente, las escribe un humano).
+
+**Lo que nos hace falta / queda pendiente:**
+- Nada de las Sesiones 13 a 16 está commiteado — sigue todo en el working tree.
+- `entrenar_motor.py` no combina datos reales con los sintéticos todavía — el modelo de pesos vigente no refleja nada de lo que ya se guardó en `data/motor.db` desde hace varias sesiones. Es la tarea que sigue a esta bitácora.
+- `data/modelos/pesos_hipotesis_anterior.json` no existe — nada lo genera automáticamente todavía, así que la Sección 5 de `dashboard_pesos.py`/pestaña "Pesos" nunca tuvo nada que comparar. También lo resuelve la tarea que sigue (CAMBIO 1).
+- `apuntes/PARA_NICOLAS.md` quedó desactualizado: no menciona el campo `es_necesidad_declarada` que ahora trae cada recomendación (desde [[Sesión 13]]).
+- El camino de HTTP 500 en `server.py` sigue sin ejercitarse con un caso real — `motor.recomendar()` está diseñado para no lanzar excepción nunca, así que ese branch nunca se dispara con las pruebas normales.
+- No hay tests automatizados (pytest ni similar) en ningún punto del proyecto — toda la verificación hecha hasta ahora fue manual, corrida a mano en cada sesión.
