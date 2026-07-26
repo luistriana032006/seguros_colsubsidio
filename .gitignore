@@ -15,8 +15,9 @@ __pycache__/
 .venv/
 venv/
 
-# Streamlit
-.streamlit/
+# Streamlit -- credentials.toml es específico de cada máquina (evita el prompt
+# de bienvenida). config.toml es el tema de marca del proyecto, sí se versiona.
+.streamlit/credentials.toml
 
 # SO / editores
 .DS_Store

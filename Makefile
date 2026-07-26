@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PYTHON ?= python3
 
-.PHONY: help install setup db datos entrenar motor server dashboard app mcp run clean
+.PHONY: help install setup db datos entrenar motor server dashboard pesos app mcp run clean
 
 help: ## Muestra esta ayuda
 	@echo "Motor de recomendación de seguros — comandos disponibles:"
@@ -30,13 +30,16 @@ server: ## Levanta la API FastAPI del motor (puerto 8000, docs en /docs)
 dashboard: ## Levanta el dashboard de métricas en vivo (puerto 8502)
 	$(PYTHON) -m streamlit run dashboard.py --server.port 8502
 
+pesos: ## Levanta el dashboard de pesos de hipótesis en vivo (puerto 8503)
+	$(PYTHON) -m streamlit run dashboard_pesos.py --server.port 8503
+
 app: ## Levanta la demo Streamlit de prueba manual del motor (puerto 8501)
 	$(PYTHON) -m streamlit run app.py --server.port 8501
 
 mcp: ## Levanta el servidor MCP (stdio) para que un LLM lo use como herramienta
 	$(PYTHON) mcp_server.py
 
-run: install ## Levanta server + dashboard + app juntos -- Ctrl+C detiene los tres
+run: install ## Levanta server + app (con sus 3 pestañas) juntos -- Ctrl+C detiene los dos
 	@# mkdir+credentials.toml evita el prompt interactivo de bienvenida de Streamlit
 	@# ("Email:") que aparece la primera vez que se corre en una máquina y bloquea
 	@# la terminal esperando input -- Streamlit lo activa cuando no existe este
@@ -57,10 +60,7 @@ run: install ## Levanta server + dashboard + app juntos -- Ctrl+C detiene los tr
 	echo "Levantando el servidor del motor en http://localhost:8000 (docs en http://localhost:8000/docs) ..."; \
 	$(PYTHON) server.py & \
 	PIDS+=("$$!"); \
-	echo "Levantando el dashboard de métricas en http://localhost:8502 ..."; \
-	$(PYTHON) -m streamlit run dashboard.py --server.port 8502 & \
-	PIDS+=("$$!"); \
-	echo "Levantando la demo en http://localhost:8501 ..."; \
+	echo "Levantando la demo en http://localhost:8501 (pestañas: Probar el motor / Métricas / Pesos) ..."; \
 	$(PYTHON) -m streamlit run app.py --server.port 8501 & \
 	PIDS+=("$$!"); \
 	wait
